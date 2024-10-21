@@ -1,6 +1,6 @@
 import "./DrawerStyle.css";
 
-function Drawer() {
+function Drawer({ children }) {
   return (
     <>
       <header>
@@ -75,6 +75,9 @@ function Drawer() {
           </li>
         </ul>
       </aside>
+      <main>
+        <div className="container">{children}</div>
+      </main>
     </>
   );
 }

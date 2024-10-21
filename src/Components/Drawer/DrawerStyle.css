@@ -63,9 +63,11 @@ nav > input[type="checkbox"] {
   display: block;
 }
 main {
+  display: flex;
   width: calc(100% - 300px);
   max-width: calc(100% - 300px);
   margin-left: 300px;
+  min-height: calc(100vh - 60px);
 }
 .vertical_list {
   display: block;
