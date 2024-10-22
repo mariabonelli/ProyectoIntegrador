@@ -41,12 +41,15 @@ function Alert({ children }) {
           <path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" />
         </svg>
       </Button>
+
       <div
-        className="container_dialog"
+        className={`container_dialog ${
+          abierto ? "container_alert_open" : "container_alert_close"
+        }`}
         onClick={() => {
           setAbierto(!abierto);
-        }}
-        style={{ display: abierto ? "flex " : "none" }}
+        }} //puedo borrar esta línea para manejar la visibilidad con la animación?
+        /*style={{ display: abierto ? "flex " : "none" }}*/
         role="button"
       >
         {/* <button
