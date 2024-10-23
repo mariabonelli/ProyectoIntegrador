@@ -1,7 +1,7 @@
 .card {
-  height: 100%;
   gap: 15px;
   display: grid;
+  background-color: aqua;
   grid-template-rows: 50px auto 50px;
 }
 .card_title {
@@ -20,33 +20,4 @@
   flex-direction: row;
   justify-content: end;
   padding: 0px 15px 15px 0px;
-}
-.card_section > .btn {
-  margin: 0px !important;
-}
-.card {
-  height: 100%;
-  gap: 15px;
-  display: grid;
-  grid-template-rows: 50px auto 50px;
-}
-.card_title {
-  padding: 15px;
-  font-weight: bold;
-  font-size: 18px;
-}
-.card_text {
-  padding: 15px;
-  overflow-y: auto;
-  color: #818181;
-  font-size: 16px;
-}
-.card_section {
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  padding: 0px 15px 15px 0px;
-}
-.card_section > .btn {
-  margin: 0px !important;
 }
