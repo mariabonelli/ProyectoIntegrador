@@ -63,3 +63,54 @@
 .texfield_outlined input:focus {
   border: 2px solid var(--primary-color);
 }
+
+.textfield textarea::placeholder {
+  opacity: 0;
+}
+.textfield > textarea {
+  width: 100%;
+  height: 120px;
+  font-size: 1.2em;
+  padding: 10px;
+  outline: none;
+  border-bottom: 1px solid #ccc;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+.texfield_outlined > textarea {
+  border: 1px solid #ccc;
+  border-color: #cccccc;
+  border-radius: 0.2em;
+}
+
+.textfield label {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.2em;
+  color: #818181;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}
+
+.textfield textarea:focus + label,
+.textfield textarea:not(:placeholder-shown) + label {
+  top: 0;
+  font-size: 0.8em;
+  color: var(--primary-color);
+  background: inherit;
+  padding: 7px;
+}
+
+.textfield textarea:focus {
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.texfield_outlined textarea:focus {
+  border: 2px solid var(--primary-color);
+}
