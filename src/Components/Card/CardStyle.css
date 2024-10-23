@@ -1,7 +1,6 @@
 .card {
   gap: 15px;
   display: grid;
-  background-color: aqua;
   grid-template-rows: 50px auto 50px;
 }
 .card_title {
