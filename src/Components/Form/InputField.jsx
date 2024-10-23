@@ -1,9 +1,9 @@
 import "./FormStyle.css";
 
-function InputField() {
+function InputField({ outlined }) {
   return (
     <>
-      <div className="textfield">
+      <div className={!outlined ? "outlined" : "textfield texfield_outlined"}>
         <input name="nombre" id="nombre" type="text" placeholder="Nombre" />
         <label htmlFor="nombre">Nombre</label>
       </div>
