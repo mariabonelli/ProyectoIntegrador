@@ -8,8 +8,18 @@
   justify-content: center;
 }
 
-.react-calendar__month-view__weekdays {
+.react-calendar_month-view_weekdays {
+  text-align: center;
+  text-transform: uppercase;
+  font: inherit;
+  font-size: 0.75em;
+  font-weight: bold;
 }
+
+.react-calendar_month-viewdays_day--weekend {
+  color: #f90000 !important;
+}
+
 .calendar_container {
 }
 
