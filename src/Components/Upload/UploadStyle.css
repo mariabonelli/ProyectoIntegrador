@@ -1,0 +1,30 @@
+.container_file_uploader {
+  display: flex;
+  gap: 10px;
+  padding: 15px;
+  display: flex;
+  margin: 10px;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--primary-color);
+}
+.btn_file_upload {
+  display: flex;
+  padding: 8px;
+
+  min-width: 150px;
+  max-width: 300px;
+  border: none;
+  color: white;
+  border-radius: 12px;
+  background-color: var(--primary-color);
+  justify-items: right;
+  align-items: center;
+}
+.btn_file_upload > span {
+  width: 100%;
+  text-align: center;
+}
+.btn_file_upload > svg {
+  max-height: 25px;
+}
