@@ -1,37 +1,33 @@
 import "./FormStyle.css";
 
-function InputField({
+function TextArea({
   outlined,
   handleChange,
   name,
   id,
+  rows,
   placeholder,
-  type,
   required,
 }) {
   return (
     <>
-      <div
-        className={
-          outlined
-            ? "textfield texfield_outlined"
-            : "textfield texfield_outlined"
-        }
-      >
-        <input
+      {/* evaluacion ejemplo 1!=1 ?evualiacion verdadera:evaluacion falsa */}
+      <div className={outlined ? "textfield textfield_outlined" : "textfield"}>
+        <textarea
           onChange={(e) => {
             handleChange(e.target.value);
           }}
           name={name}
           id={id}
-          type={type}
+          rows={rows}
           placeholder={placeholder}
           required={required}
-        />
+          /* style={{marginRight: spacing + 'em'}} */
+          style={{ resize: "none" }}
+        ></textarea>
         <label htmlFor={id}>{placeholder}</label>
       </div>
     </>
   );
 }
-
-export default InputField;
+export default TextArea;
