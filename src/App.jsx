@@ -1,16 +1,20 @@
+import { Routes, Route } from "react-router-dom";
 import Drawer from "./Components/Drawer/Drawer";
-import Banner from "./Components/Banner/Banner";
-import Calendar from "./Components/Calendar/Calendar";
+import Departamentos from "./Pages/Administrador/Departamentos";
+import Servicios from "./Pages/Administrador/Servicios";
+import Solicitudes from "./Pages/Administrador/Solicitudes";
+import ListadoDeServicios from "./Pages/ListadoDeServicios";
+
 function App() {
-  const [input, setInput] = useState("valor inicial");
-  const [textArea, setTextArea] = useState("valor secundario");
-  const handleFormSubmit = (e) => {
-    console.log(e);
-  };
   return (
     <>
       <Drawer>
-        <Calendar />
+        <Routes>
+          <Route path="/departamentos" element={<Departamentos />} />
+          <Route path="/servicios" element={<Servicios />} />
+          <Route path="/solicitudes" element={<Solicitudes />} />
+          <Route path="/" element={<ListadoDeServicios />} />
+        </Routes>
       </Drawer>
     </>
   );
