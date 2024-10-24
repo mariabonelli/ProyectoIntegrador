@@ -1,4 +1,4 @@
-<div
+/* <div
   class="react-calendar__month-view__weekdays"
   style="display: flex; flex-wrap: nowrap;"
   > <div
@@ -58,7 +58,8 @@
   > dom</abbr
   > </div
   > </div
-  > .react_calendar_container {
+  >  */
+.react_calendar_container {
   display: flex;
   flex-direction: column;
 }
@@ -102,6 +103,7 @@
   background-color: #ffffff;
   border-color: var(--secondary-color);
   position: relative;
+  z-index: -1;
 }
 
 .custom_calendar .find_event:after {
