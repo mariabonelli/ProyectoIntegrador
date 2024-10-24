@@ -1,0 +1,45 @@
+.ui_list {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  max-width: 350px;
+  margin: 0 auto;
+  padding: 0;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+.ui_list_item {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+}
+
+.ui_list_item_text {
+  width: 100%;
+}
+
+.ui_list_item_point::before {
+  content: " • ";
+  margin-right: 8px;
+}
+
+.ui_list_item_title {
+  display: flex;
+  justify-content: space-between;
+  min-width: 80%;
+}
+
+.ui_list_item_action {
+  font-size: 12px;
+  font-weight: 100;
+  color: #818181;
+}
+
+.ui_list_item_subtitle {
+  font-size: 12px;
+  font-weight: 100;
+  color: #818181;
+}
