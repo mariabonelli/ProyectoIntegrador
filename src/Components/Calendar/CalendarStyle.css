@@ -1,64 +1,4 @@
-<div
-  class="react-calendar__month-view__weekdays"
-  style="display: flex; flex-wrap: nowrap;"
-  > <div
-  class="react-calendar__month-view__weekdays__weekday"
-  style="flex: 0 0 14.2857%; overflow: hidden; margin-inline-end: 0px;"
-  > <abbr
-  aria-label="lunes"
-  title="lunes"
-  > lun</abbr
-  > </div
-  > <div
-  class="react-calendar__month-view__weekdays__weekday"
-  style="flex: 0 0 14.2857%; overflow: hidden; margin-inline-end: 0px;"
-  > <abbr
-  aria-label="martes"
-  title="martes"
-  > mar</abbr
-  > </div
-  > <div
-  class="react-calendar__month-view__weekdays__weekday react-calendar__month-view__weekdays__weekday--current"
-  style="flex: 0 0 14.2857%; overflow: hidden; margin-inline-end: 0px;"
-  > <abbr
-  aria-label="miércoles"
-  title="miércoles"
-  > mié</abbr
-  > </div
-  > <div
-  class="react-calendar__month-view__weekdays__weekday"
-  style="flex: 0 0 14.2857%; overflow: hidden; margin-inline-end: 0px;"
-  > <abbr
-  aria-label="jueves"
-  title="jueves"
-  > jue</abbr
-  > </div
-  > <div
-  class="react-calendar__month-view__weekdays__weekday"
-  style="flex: 0 0 14.2857%; overflow: hidden; margin-inline-end: 0px;"
-  > <abbr
-  aria-label="viernes"
-  title="viernes"
-  > vie</abbr
-  > </div
-  > <div
-  class="react-calendar__month-view__weekdays__weekday react-calendar__month-view__weekdays__weekday--weekend"
-  style="flex: 0 0 14.2857%; overflow: hidden; margin-inline-end: 0px;"
-  > <abbr
-  aria-label="sábado"
-  title="sábado"
-  > sáb</abbr
-  > </div
-  > <div
-  class="react-calendar__month-view__weekdays__weekday react-calendar__month-view__weekdays__weekday--weekend"
-  style="flex: 0 0 14.2857%; overflow: hidden; margin-inline-end: 0px;"
-  > <abbr
-  aria-label="domingo"
-  title="domingo"
-  > dom</abbr
-  > </div
-  > </div
-  > .react_calendar_container {
+.react_calendar_container {
   display: flex;
   flex-direction: column;
 }
@@ -66,10 +6,30 @@
 .react-calendar__navigation {
   display: flex;
   justify-content: center;
+  margin-bottom: 1em;
+  height: 40px;
+}
+
+.react-calendar__navigation__arrow {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+  height: 40px;
+  align-items: center;
 }
 
 .react-calendar__month-view__weekdays {
+  text-align: center;
+  text-transform: uppercase;
+  font: inherit;
+  font-size: 0.75em;
+  font-weight: bold;
 }
+
+.react-calendar__month-view__days__day--weekend {
+  color: #f90000 !important;
+}
+
 .calendar_container {
 }
 
@@ -117,47 +77,6 @@
 .events_container {
   margin-top: 20px;
   width: 80%;
-}
-
-.events_container h2 {
-  color: #333;
-  font-size: 1.5rem;
-  margin-bottom: 10px;
-}
-
-.events_container ul {
-  list-style-type: none;
-  padding: 0%;
-}
-
-.events_container li {
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  border: 1px solid #ddd;
-}
-
-.events_container li:hover {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-.events_container li span {
-  color: var(--primary-color);
-  font-size: 30px;
-}
-
-.events_container li span::before {
-  content: "• ";
-}
-
-.react-calendar__navigation > button {
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
-.react-calendar__navigation > button:hover {
-  background-color: var(--primary-color);
 }
 
 .events_container h2 {
