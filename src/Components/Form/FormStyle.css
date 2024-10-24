@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   min-width: 600px;
-  /* background-color: red; */
   padding: 15px;
   background-color: #fff;
   gap: 15px;
@@ -12,9 +11,11 @@
   position: relative;
   width: 100%;
   background-color: inherit;
+  margin: 15px 0;
 }
 .textfield input::placeholder {
   opacity: 0;
+  color: transparent;
 }
 .textfield > input {
   width: 100%;
@@ -28,7 +29,7 @@
   border-top: none;
 }
 
-.textfield_outlined > input {
+.texfield_outlined > input {
   border: 1px solid #ccc;
   border-color: #cccccc;
   border-radius: 0.2em;
@@ -60,65 +61,13 @@
   border-bottom: 2px solid var(--primary-color);
 }
 
-.textfield_outlined input:focus {
-  border: 2px solid var(--primary-color);
-}
-
-/* esta seccion es de text area */
-
-.textfield textarea::placeholder {
-  opacity: 0;
-}
-.textfield > textarea {
-  width: 100%;
-  height: 120px;
-  font-size: 1.2em;
-  padding: 10px;
-  outline: none;
-  border-bottom: 1px solid #ccc;
-  border-left: none;
-  border-right: none;
-  border-top: none;
-}
-
-.textfield_outlined > textarea {
-  border: 1px solid #ccc;
-  border-color: #cccccc;
-  border-radius: 0.2em;
-}
-
-.textfield label {
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.2em;
-  color: #818181;
-  letter-spacing: 1px;
-  transition: 0.3s;
-  font-family: "Roboto", sans-serif;
-  font-weight: 600;
-}
-
-.textfield textarea:focus + label,
-.textfield textarea:not(:placeholder-shown) + label {
-  top: 0;
-  font-size: 0.8em;
-  color: var(--primary-color);
-  background: inherit;
-  padding: 7px;
-}
-
-.textfield textarea:focus {
-  border-bottom: 2px solid var(--primary-color);
-}
-
-.textfield_outlined textarea:focus {
+.texfield_outlined input:focus {
   border: 2px solid var(--primary-color);
 }
 
 .textfield textarea::placeholder {
   opacity: 0;
+  color: transparent;
 }
 .textfield > textarea {
   width: 100%;
