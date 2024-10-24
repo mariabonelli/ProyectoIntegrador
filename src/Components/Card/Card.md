@@ -2,7 +2,7 @@
 
 --Descripcion General
 
-El componenete "Card" es un Componenete UI que sirve como punto de entrada para otorgar acceso a informacion mas detallada.
+El componente "Card" es un Componente UI que sirve como punto de entrada para otorgar acceso a informacion mas detallada.
 
 Facilita la organizacion de la interfaz y la navegacion entre diferentes secciones sin necesidad de crear multiples ventanas o cuadros de dialogo.
 
@@ -16,7 +16,7 @@ Mantiene la informacion oculta de la vista de usuario hasta que se sobrepone el 
 
 --Conclusion 
 
-Los componentes Card permiten que el usuario tenga acceso visible a la informacion cuando sobreponga el cursor sobre cada Card disponible en la pagina
+Los componentes Card permiten que el usuario tenga acceso visible a la informacion cuando sobreponga el cursor sobre cada Card disponible en la pagina.
 
 --Invocar clase
 
