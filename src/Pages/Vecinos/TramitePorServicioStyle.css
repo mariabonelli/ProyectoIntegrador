@@ -1,0 +1,17 @@
+.tramite_por_servicio_container {
+  display: flex;
+  min-height: calc(100vh - 160px);
+  justify-content: center;
+  align-items: center;
+}
+
+.content_item {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.content_item > div > button {
+  width: 100%;
+}
