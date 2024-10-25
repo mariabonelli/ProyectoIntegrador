@@ -4,6 +4,7 @@ import Departamentos from "./Pages/Administrador/Departamentos";
 import Servicios from "./Pages/Administrador/Servicios";
 import Solicitudes from "./Pages/Administrador/Solicitudes";
 import ListadoDeServicios from "./Pages/ListadoDeServicios";
+import Login from "./Components/Login/Login";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<ListadoDeServicios />} />
         </Routes>
       </Drawer>
+      <Login />
     </>
   );
 }
