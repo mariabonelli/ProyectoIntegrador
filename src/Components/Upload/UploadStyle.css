@@ -11,20 +11,69 @@
 .btn_file_upload {
   display: flex;
   padding: 8px;
-
+  flex-direction: center;
+  justify-content: center;
   min-width: 150px;
   max-width: 300px;
   border: none;
   color: white;
-  border-radius: 12px;
+  border-radius: 10px;
   background-color: var(--primary-color);
-  justify-items: right;
   align-items: center;
 }
 .btn_file_upload > span {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   width: 100%;
   text-align: center;
 }
-.btn_file_upload > svg {
+.btn_file_upload svg {
   max-height: 25px;
+}
+
+/**/
+
+.file-upload-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.file-input {
+  display: none; /* Ocultar el input */
+}
+.custom-file-upload {
+  display: inline-block;
+  min-width: 200px;
+  padding: 10px 20px;
+  border: 2px dotted var(--primary-color);
+
+  color: var(--primary-color);
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.custom-file-upload svg {
+  fill: red;
+}
+
+.container_image_upload {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+}
+.container_image_upload > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.custom-file-upload:hover {
+  background-color: #0056b3;
+} /* Texto de archivo seleccionado */
+.file-upload-container p {
+  margin-top: 15px;
+  font-size: 14px;
 }
