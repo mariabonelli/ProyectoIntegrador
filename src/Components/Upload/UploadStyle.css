@@ -6,7 +6,8 @@
   margin: 10px;
   flex-direction: column;
   align-items: center;
-  border: 1px solid var(--primary-color);
+  border: 3px dotted var(--primary-color);
+  border-radius: 25px;
 }
 .btn_file_upload {
   display: flex;
@@ -27,6 +28,7 @@
   align-items: center;
   width: 100%;
   text-align: center;
+  font-weight: 750;
 }
 .btn_file_upload svg {
   max-height: 25px;
@@ -44,7 +46,7 @@
 }
 .custom-file-upload {
   display: inline-block;
-  min-width: 200px;
+  min-width: 150px;
   padding: 10px 20px;
   border: 2px dotted var(--primary-color);
 
@@ -71,7 +73,7 @@
 }
 
 .custom-file-upload:hover {
-  background-color: #0056b3;
+  background-color: rgba(11, 183, 158, 0.5);
 } /* Texto de archivo seleccionado */
 .file-upload-container p {
   margin-top: 15px;

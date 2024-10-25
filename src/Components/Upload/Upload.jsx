@@ -55,10 +55,44 @@ function Upload() {
     setFilePreview(null); */
   };
 
+  /*Gestionador de arrastre*/
+
+  const handleDragOver = (event) => {
+    event.preventDefault();
+  };
+
+  const handleDrop = (event) => {
+    event.preventDefault();
+    const file = event.dataTransfer.files[0];
+    if (file && validateFileType(file)) {
+      setSelectedFile(file);
+      setError("");
+      if (file.type.startsWith("image/")) {
+        const fileReader = new FileReader();
+        fileReader.onloadend = () => {
+          setFilePreview(fileReader.result);
+        };
+        fileReader.readAsDataURL(file);
+      } else {
+        setFilePreview(null);
+      }
+    } else {
+      setError("El tipo de archivo no es válido");
+      setSelectedFile(null);
+      setFilePreview(null);
+    }
+  };
+
   return (
     <div className="container_file_uploader">
-      <h2>Carga de Archivos</h2>
-      <div className="file-upload-container">
+      <h2>Arrastra y suelta </h2>
+      <br />
+      <h3>O sube un archivo</h3>
+      <div
+        className="file-upload-container"
+        onDragOver={handleDragOver}
+        onDrop={handleDrop}
+      >
         <input
           className="file-input"
           id="idmyinputfield"
@@ -94,9 +128,7 @@ function Upload() {
         <p>{selectedFile.name}</p>
       )}
       <button className="btn_file_upload" onClick={handleUpload}>
-        <span>
-          Subir Archivo <UploadIcon />{" "}
-        </span>
+        <span>Enviar Archivo </span>
       </button>
     </div>
   );
