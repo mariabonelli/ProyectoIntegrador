@@ -9,27 +9,15 @@ import ListadoDeServicios from "./Pages/ListadoDeServicios";
 import Login from "./Components/Login/Login";
 
 function App() {
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
 
-
-  useEffect(()=>{ 
-    const body={
-      "email": "unicajefa@renca.cl",
-      "password": "fun123"
-  }
-    //axios.get("URL").then().catch()
-    //axios.post("URL", {body(que es un objeto)}).then().catch()
-    axios.post("http://localhost:8080/api/auth/login", body)
-    .then((resp)=>{
-      //console.log(resp.data)
-      setUser(resp.data)
-      localStorage.setItem("user", JSON.stringify(resp.data))
-    })
-    .catch((error)=>{
-      console.log(error)
-    })
-  }, [])
-
+  useEffect(() => {
+    const sesion = localStorage.getItem("user");
+    console.log(sesion);
+    if (sesion) {
+      setUser(sesion);
+    }
+  }, []);
 
   return (
     <>
@@ -38,10 +26,10 @@ function App() {
           <Route path="/departamentos" element={<Departamentos />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/solicitudes" element={<Solicitudes />} />
-          <Route path="/" element={<AgregarDepartamento />} />
+          <Route path="/" element={<ListadoDeServicios />} />
         </Routes>
       </Drawer>
-      {!user&&<Login />}
+      {!user && <Login loginIsSuccess={setUser} />}
     </>
   );
 }
