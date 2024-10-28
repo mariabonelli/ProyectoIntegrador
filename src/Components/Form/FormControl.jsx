@@ -1,3 +1,5 @@
+import "../Button/ButtonStyle.css";
+
 export default function FormControl({ children, handleFormSubmit }) {
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -7,7 +9,9 @@ export default function FormControl({ children, handleFormSubmit }) {
     <div className="form_control">
       <form onSubmit={handleSubmit}>
         {children}
-        <button type="submit">Enviar formulario</button>
+        <button className="btn" type="submit">
+          <span>enviar</span>
+        </button>
       </form>
     </div>
   );
