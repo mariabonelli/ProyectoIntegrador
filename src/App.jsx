@@ -19,6 +19,7 @@ import OtrasConsultas from "./Pages/Vecinos/OtrasConsultas";
 import TramitePorServicio from "./Pages/Vecinos/TramitePorServicio";
 
 import AgregarTramite from "./Pages/Funcionarios/AgregarTramite";
+import ListadoTramites from "./Pages/Funcionarios/ListadoTramites";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/solicitudes" element={<Solicitudes />} />
           <Route path="/" element={<AgregarTramite />} />
+          <Route path="/listadotramites" element={<ListadoTramites />} />
         </Routes>
       </Drawer>
     </>
