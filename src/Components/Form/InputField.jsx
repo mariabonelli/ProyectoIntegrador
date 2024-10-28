@@ -13,7 +13,7 @@ function InputField({
   const id = useId();
   return (
     <>
-      <div className={outlined ? "textfield texfield_outlined" : "textfield"}>
+      <div className={outlined ? "textfield textfield_outlined" : "textfield"}>
         <input
           onChange={(e) => {
             handleChange(e.target.value);

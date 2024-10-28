@@ -10,7 +10,6 @@ function AgregarDepartamento() {
   const [descripcion, setDescripcion] = useState("");
 
   const handleFormSubmit = () => {
-    console.log("hola");
     const data = {
       departamento: departamento,
       descripcion: descripcion,
