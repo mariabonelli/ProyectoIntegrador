@@ -38,7 +38,7 @@ function App() {
           <Route path="/departamentos" element={<Departamentos />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/solicitudes" element={<Solicitudes />} />
-          <Route path="/" element={<ListadoDeServicios />} />
+          <Route path="/" element={<AgregarDepartamento />} />
         </Routes>
       </Drawer>
       {!user&&<Login />}
