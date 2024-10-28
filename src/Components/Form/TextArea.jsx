@@ -1,14 +1,15 @@
+import { useId } from "react";
 import "./FormStyle.css";
 
 function TextArea({
   outlined,
   handleChange,
   name,
-  id,
   rows,
   placeholder,
   required,
 }) {
+  const id = useId();
   return (
     <>
       {/* evaluacion ejemplo 1!=1 ?evualiacion verdadera:evaluacion falsa */}
