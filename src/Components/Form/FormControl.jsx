@@ -6,7 +6,6 @@ export default function FormControl({ children, handleFormSubmit }) {
   return (
     <div className="form_control">
       <form onSubmit={handleSubmit}>{children}</form>
-      <button type="submit">enviar</button>
     </div>
   );
 }
