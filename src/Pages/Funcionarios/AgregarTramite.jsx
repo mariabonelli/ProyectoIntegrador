@@ -32,7 +32,7 @@ function AgregarTramite() {
         value={nombre}
         name={"Nombre"}
         handleChange={setNombre}
-        placeholder={"Nombre de Tramite"}
+        placeholder={"Nombre de Tramite."}
         required={true}
       />
       <TextArea
@@ -40,7 +40,7 @@ function AgregarTramite() {
         outlined={true}
         name={"Descripción"}
         handleChange={setDescripcion}
-        placeholder={"Descripción de Tramite"}
+        placeholder={"Descripción de Tramite."}
         required={false}
       />
     </FormControl>
