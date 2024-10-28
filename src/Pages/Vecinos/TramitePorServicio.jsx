@@ -4,7 +4,6 @@ import data from "../../assets/PruebasPatiDevs/TramitesLista";
 import Button from "../../Components/Button/Button";
 import "./TramitePorServicioStyle.css";
 import axios from "axios";
-
 function TramitePorServicio() {
   const [pagado, setPagado] = useState(false);
   const [dependencia, setDependencia] = useState("");
@@ -18,7 +17,14 @@ function TramitePorServicio() {
       <div className="content_item">
         <button
           onClick={() => {
-            setPagado(!pagado);
+            axios
+              .get("http://localhost:8080/api/tramites/lista")
+              .then((response) => {
+                console.log(response.data);
+              })
+              .catch((error) => {
+                console.error("Error fetching data:", error);
+              });
           }}
         >
           {pagado ? "Pagado" : "No Pagado"}
@@ -32,6 +38,7 @@ function TramitePorServicio() {
             ? "Dependencia Activada"
             : "Dependencia Desactivada"}
         </button>
+
         {console.log("return/render")}
         {data.map((item) => (
           <div key={item.id}>
