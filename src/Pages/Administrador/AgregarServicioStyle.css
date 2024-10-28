@@ -1,0 +1,13 @@
+.agregar_servicio_container {
+  width: 600px;
+  max-width: 100%;
+  margin: 30px auto;
+}
+
+.agregar_servicio_container_form {
+  max-width: 100%;
+}
+
+.agregar_servicio_container_form button {
+  width: 100%;
+}
