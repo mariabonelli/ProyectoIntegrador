@@ -57,7 +57,8 @@
 }
 
 .custom-file-upload svg {
-  fill: red;
+  height: 150px;
+  width: 150px;
 }
 
 .container_image_upload {
