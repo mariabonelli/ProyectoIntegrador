@@ -1,52 +1,15 @@
 import { useState } from "react";
 import ReactCalendar from "react-calendar";
 import "./CalendarStyle.css";
+import ListItemTitle from "../List/ListItemTitle";
+import List from "../List/List";
 
-const Data = [
-  {
-    _id: 1,
-    vecino_id: 1,
-    funcionario_id: 1,
-    start: new Date(2024, 9, 20, 10, 0),
-    /*              YYYY, M-1,D, hh: mm */
-    end: new Date(2024, 9, 20, 10, 0),
-    /*              YYYY, M-1,D, hh: mm */
-    tramite_id: 1,
-    motivo: "cachupin",
-    estado: "agendada",
-  },
-  {
-    _id: 2,
-    vecino_id: 1,
-    funcionario_id: 1,
-    start: new Date(2024, 9, 21, 10, 0),
-    /*              YYYY, M-1,D, hh: mm */
-    end: new Date(2024, 9, 21, 10, 0),
-    /*              YYYY, M-1,D, hh: mm */
-    tramite_id: 1,
-    motivo: "Gatito enfermo",
-    estado: "agendada",
-  },
-  {
-    _id: 3,
-    vecino_id: 1,
-    funcionario_id: 1,
-    start: new Date(2024, 9, 21, 10, 0),
-    /*              YYYY, M-1,D, hh: mm */
-    end: new Date(2024, 9, 21, 10, 0),
-    /*              YYYY, M-1,D, hh: mm */
-    tramite_id: 1,
-    motivo: "Perrito enfermo",
-    estado: "agendado",
-  },
-];
-
-function Calendar() {
+function Calendar({ data }) {
   const [value, setValue] = useState(new Date());
-  const [events, setEvents] = useState(Data);
+  const [events, setEvents] = useState(data);
 
   const eventForSelectDay = events.filter(
-    (event) => event.start.toDateString() === value.toDateString()
+    (event) => new Date(event.fechaHora).toDateString() === value.toDateString()
   );
 
   return (
@@ -58,7 +21,8 @@ function Calendar() {
           onChange={setValue}
           tileClassName={({ date }) => {
             const eventForDay = events.find(
-              (event) => event.start.toDateString() === date.toDateString()
+              (event) =>
+                new Date(event.fechaHora).toDateString() === date.toDateString()
             );
             return eventForDay ? "find_event" : null;
             /*  return eventForSelectDay.length ? "find_event" : ""; */
@@ -75,16 +39,19 @@ function Calendar() {
             month: "long",
             day: "numeric",
           })}{" "}
-          {eventForSelectDay.length}
         </h2>
 
         {eventForSelectDay.length > 0 ? (
           <ul>
             {eventForSelectDay.map((element) => (
-              <li key={element._id}>
-                <span></span>
-                {element.motivo}
-              </li>
+              <List key={element.id}>
+                <ListItemTitle
+                  subtitle={element.estado}
+                  action={element.fechaHora.split(" ")[1]}
+                >
+                  Conversar con patidevs
+                </ListItemTitle>
+              </List>
             ))}
           </ul>
         ) : (
