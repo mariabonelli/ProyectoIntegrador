@@ -123,22 +123,128 @@
   border: 2px solid var(--primary-color);
 }
 
-.checkboxfield {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 10px;
-  margin-top: 15px;
 }
 
-.checkboxfield input {
-  width: 20px;
+.container {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px 40px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.5em;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.checkbox_group {
+  display: flex;
+  align-items: start;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+/* Estilos de checkbox normal */
+.checkbox {
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  cursor: pointer;
+  appearance: none;
+  border: 2px solid #009879;
+  border-radius: 3px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.checkbox:checked {
+  background-color: #009879;
+  border-color: #009879;
+}
+
+.checkbox:checked::after {
+  content: "✓";
+  display: block;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+/* Estilos de switch */
+.checkbox.switch {
+  appearance: none;
+  width: 40px;
   height: 20px;
-  accent-color: var(--primary-color); /* Esto aplica el color de tu línea */
+  background-color: #ccc;
+  border-radius: 20px;
+  position: relative;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-.checkboxfield label {
-  font-size: 1.2em;
-  color: #818181;
-  font-family: "Roboto", sans-serif;
-  font-weight: 550;
+.checkbox.switch:checked {
+  background-color: #009879;
+}
+
+.checkbox.switch:before {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.checkbox.switch:checked::after {
+  content: "";
+}
+
+.checkbox.switch:checked:before {
+  transform: translateX(20px);
+}
+
+/* Estilos de etiqueta */
+.checkbox_label {
+  font-size: 1em;
+  color: #333;
+}
+
+/* Checkbox deshabilitado */
+.disabled_checkbox {
+  background-color: #e0e0e0;
+  cursor: not-allowed;
+}
+
+.disabled_checkbox:before {
+  background-color: #a0a0a0;
+}
+
+.disabled_checkbox:checked {
+  background-color: #ccc;
+}
+
+.disabled-checkbox + .checkbox_label {
+  color: #a0a0a0;
 }

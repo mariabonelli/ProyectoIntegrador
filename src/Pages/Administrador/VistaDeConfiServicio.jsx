@@ -31,10 +31,13 @@ function VistaDeConfiServicio() {
         <FormControl handleFormSubmit={handleFormSubmit}>
           <InputField placeholder="Nombre de servicio" type="text" />
           <TextArea placeholder="Descripción de servicio" />
-          <Checkbox valor="Agregar imagen" />
-          <Checkbox valor="Agregar pdf" />
-          <Checkbox valor="Agregar comentario" />
-          <Checkbox valor="Agregar Términos y condiciones" />
+          <Checkbox className="checkbox" valor="Agregar imagen" />
+          <Checkbox className="checkbox" valor="Agregar pdf" disabled />
+          <Checkbox className="checkbox" valor="Agregar comentario" />
+          <Checkbox
+            className="checkbox"
+            valor="Agregar Términos y condiciones"
+          />
           <TextArea placeholder="Escriba términos y condiciones" />
         </FormControl>
       </div>
