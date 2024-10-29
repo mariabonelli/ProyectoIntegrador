@@ -122,3 +122,23 @@
 .texfield_outlined textarea:focus {
   border: 2px solid var(--primary-color);
 }
+
+.checkboxfield {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.checkboxfield input {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--primary-color); /* Esto aplica el color de tu línea */
+}
+
+.checkboxfield label {
+  font-size: 1.2em;
+  color: #818181;
+  font-family: "Roboto", sans-serif;
+  font-weight: 550;
+}
