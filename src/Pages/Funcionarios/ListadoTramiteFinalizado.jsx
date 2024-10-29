@@ -1,6 +1,7 @@
 /* PatiDevs */
+
 function ListadoTramiteFinalizado() {
-  return <div>ListadoTramiteFinalizado</div>;
+  return <div>ListadoTramiteFinalizadooo</div>;
 }
 
 export default ListadoTramiteFinalizado;
