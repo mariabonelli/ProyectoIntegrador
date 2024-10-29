@@ -28,7 +28,7 @@ function Signup() {
       password: password,
     };
     console.log(body);
-    /* axios
+    axios
       .post("http://localhost:8080/api/auth/registro", body)
       .then((resp) => {
         console.log(resp.status);
@@ -40,7 +40,7 @@ function Signup() {
         console.log(error);
         console.log("Error en el registro");
         setError("Error en el registro. Por favor verifica tus datos");
-      }); */
+      });
   };
 
   return (
