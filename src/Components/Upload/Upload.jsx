@@ -4,7 +4,7 @@ import { useState } from "react";
 import UploadIcon from "./UploadIcon";
 import axios from "axios";
 
-function Upload() {
+function Upload({ userid }) {
   const [selectedFile, setSelectedFile] = useState(null);
   const [filePreview, setFilePreview] = useState(null);
   const [error, setError] = useState("");
@@ -59,7 +59,7 @@ function Upload() {
     formData.append("file", selectedFile);
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/files/upload/paciente/4",
+        `http://localhost:8080/api/files/upload/paciente/${userid}`,
         formData,
         {
           header: {

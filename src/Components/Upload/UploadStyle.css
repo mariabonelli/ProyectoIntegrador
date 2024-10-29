@@ -2,12 +2,12 @@
   display: flex;
   gap: 10px;
   padding: 15px;
-  display: flex;
-  margin: 10px;
+  margin: 20px auto;
   flex-direction: column;
   align-items: center;
   border: 3px dotted var(--primary-color);
   border-radius: 25px;
+  max-width: 400px;
 }
 .btn_file_upload {
   display: flex;
