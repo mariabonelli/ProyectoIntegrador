@@ -2,6 +2,7 @@ import "./UploadStyle.css";
 import "../Form/FormStyle.css";
 import { useState } from "react";
 import UploadIcon from "./UploadIcon";
+import axios from "axios";
 
 function Upload() {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -44,7 +45,7 @@ function Upload() {
   };
 
   /*Gestionador de subida de archivos */
-  const handleUpload = () => {
+  const handleUpload = async () => {
     if (!selectedFile) {
       setError("No se seleccionó ningún archivo");
       return;
@@ -53,6 +54,25 @@ function Upload() {
     console.log("Archivo: ", selectedFile);
     /* setSelectedFile(null);
     setFilePreview(null); */
+
+    const formData = new FormData();
+    formData.append("file", selectedFile);
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/api/files/upload/paciente/4",
+        formData,
+        {
+          header: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log("file succesfull: ", response.data);
+      setSelectedFile(null);
+      setFilePreview(null);
+    } catch (error) {
+      console.log("Error al subir archivo: ", error);
+    }
   };
 
   /*Gestionador de arrastre*/
