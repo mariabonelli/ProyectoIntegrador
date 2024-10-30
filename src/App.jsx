@@ -20,6 +20,7 @@ import TramitePorServicio from "./Pages/Vecinos/TramitePorServicio";
 
 import AgregarTramite from "./Pages/Funcionarios/AgregarTramite";
 import ListadoTramites from "./Pages/Funcionarios/ListadoTramites";
+import ListadoTramitesFinalizados from "./Pages/Funcionarios/ListadoTramiteFinalizado";
 
 function App() {
   return (
@@ -31,6 +32,10 @@ function App() {
           <Route path="/solicitudes" element={<Solicitudes />} />
           <Route path="/" element={<AgregarTramite />} />
           <Route path="/listadotramites" element={<ListadoTramites />} />
+          <Route
+            path="/listadotramitesfinalizados"
+            element={<ListadoTramitesFinalizados />}
+          />
         </Routes>
       </Drawer>
     </>
