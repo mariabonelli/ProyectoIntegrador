@@ -20,8 +20,8 @@ import TramitePorServicio from "./Pages/Vecinos/TramitePorServicio";
 
 import AgregarTramite from "./Pages/Funcionarios/AgregarTramite";
 import ListadoTramites from "./Pages/Funcionarios/ListadoTramites";
-import EstadoTramiteFuncionario from "./Pages/Funcionarios/EstadoTramite";
-import EstadoTramiteVecino from "./Pages/Vecinos/EstadoTramite";
+import ListadoTramitesFinalizados from "./Pages/Funcionarios/ListadoTramiteFinalizado";
+import EstadoTramite from "./Pages/Vecinos/EstadoTramite";
 
 function App() {
   return (
@@ -34,19 +34,16 @@ function App() {
           <Route path="/" element={<InicioVecino />} />
           <Route path="/funcionario" element={<InicioFuncionario />} />
           <Route path="/listadotramites" element={<ListadoTramites />} />
-          <Route path="/agregartramites" element={<AgregarTramite />} />
           <Route
-            path="/agregartramites/item/:id"
-            element={<AgregarTramite />}
+            path="/listadotramitesfinalizados"
+            element={<ListadoTramitesFinalizados />}
           />
+          <Route path="/otrasconsultas" element={<OtrasConsultas />}></Route>
           <Route
-            path="/vecino/estadotramites"
-            element={<EstadoTramiteVecino />}
-          />
-          <Route
-            path="/funcionario/estadotramites"
-            element={<EstadoTramiteFuncionario />}
-          />
+            path="/tramiteporservicio"
+            element={<TramitePorServicio />}
+          ></Route>
+          <Route path="/estadotramites" element={<EstadoTramite />}></Route>
         </Routes>
       </Drawer>
     </>

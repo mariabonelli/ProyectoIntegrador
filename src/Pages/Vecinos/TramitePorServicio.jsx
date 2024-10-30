@@ -15,7 +15,7 @@ function TramitePorServicio() {
   return (
     <div className="tramite_por_servicio_container">
       <div className="content_item">
-        <button onClick={() => {}}>{pagado ? "Pagado" : "No Pagado"}</button>
+        {/* <button onClick={() => {}}>{pagado ? "Pagado" : "No Pagado"}</button>
         <button
           onClick={() => {
             setDependencia("Dependencia Activada");
@@ -24,7 +24,7 @@ function TramitePorServicio() {
           {dependencia != ""
             ? "Dependencia Activada"
             : "Dependencia Desactivada"}
-        </button>
+        </button> */}
 
         {console.log("return/render")}
         {data.map((item) => (

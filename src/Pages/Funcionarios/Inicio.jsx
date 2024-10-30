@@ -8,24 +8,44 @@ function Inicio() {
   return (
     <div className="container_inicio_funcionario">
       <List>
-        <ListItemTitle subtitle={"Gestiona trámites para la mascota"}>
-          Veterinaria
-        </ListItemTitle>
+        <Button
+          handleClick={() => navigate("/tramiteporservicio")}
+          variant={"btn_outlined"}
+        >
+          <ListItemTitle subtitle={"Gestiona trámites para la mascota"}>
+            Veterinaria
+          </ListItemTitle>
+        </Button>
       </List>
       <List>
-        <ListItemTitle subtitle={"Gestiona trámites para áreas verdes"}>
-          Áreas Verdes
-        </ListItemTitle>
+        <Button
+          handleClick={() => navigate("/tramiteporservicio")}
+          variant={"btn_outlined"}
+        >
+          <ListItemTitle subtitle={"Gestiona trámites para áreas verdes"}>
+            Áreas Verdes
+          </ListItemTitle>
+        </Button>
       </List>
       <List>
-        <ListItemTitle subtitle={"Revisa el proceso de los trámites"}>
-          Estado de trámites
-        </ListItemTitle>
+        <Button
+          handleClick={() => navigate("/estadotramites")}
+          variant={"btn_outlined"}
+        >
+          <ListItemTitle subtitle={"Revisa el proceso de los trámites"}>
+            Estado de trámites
+          </ListItemTitle>
+        </Button>
       </List>
       <List>
-        <ListItemTitle subtitle={"Revisa los trámites finalizados"}>
-          Historial trámites finalizados
-        </ListItemTitle>
+        <Button
+          handleClick={() => navigate("/otrasconsultas")}
+          variant={"btn_outlined"}
+        >
+          <ListItemTitle subtitle={"Revisa los trámites finalizados"}>
+            Historial trámites finalizados
+          </ListItemTitle>
+        </Button>
       </List>
       <List>
         <ListItemTitle subtitle={"Revisa el historial de tus notificaciones"}>
