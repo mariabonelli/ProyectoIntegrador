@@ -1,4 +1,4 @@
-/* PatiDevs */
+/* PatiDevs Lista de Tramites disponibles para creacion de solicitud para el Vecino*/
 import { useEffect, useState } from "react";
 import data from "../../assets/PruebasPatiDevs/TramitesLista";
 import Button from "../../Components/Button/Button";

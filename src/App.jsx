@@ -17,7 +17,7 @@ import InicioFuncionario from "./Pages/Funcionarios/Inicio";
 import OtrasConsultas from "./Pages/Vecinos/OtrasConsultas";
 
 import TramitePorServicio from "./Pages/Vecinos/TramitePorServicio";
-
+import HistorialTramiteFinalizados from "./Pages/Vecinos/HistorialTramiteFinalizados";
 import AgregarTramite from "./Pages/Funcionarios/AgregarTramite";
 import ListadoTramites from "./Pages/Funcionarios/ListadoTramites";
 import ListadoTramitesFinalizados from "./Pages/Funcionarios/ListadoTramiteFinalizado";
@@ -28,6 +28,14 @@ function App() {
     <>
       <Drawer>
         <Routes>
+          <Route
+            path="/historialtramitesfinalizados"
+            element={<HistorialTramiteFinalizados />}
+          ></Route>
+          <Route
+            path="/historialtramitesfinalizados/:id"
+            element={<HistorialTramiteFinalizados />}
+          ></Route>
           <Route path="/departamentos" element={<Departamentos />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/solicitudes" element={<Solicitudes />} />

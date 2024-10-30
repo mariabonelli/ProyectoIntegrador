@@ -1,4 +1,4 @@
-/* Funcionario PatiDevs alemdnraLiguen*/
+/*  PatiDevs Listado general de Tramites exclusivivamente FINALIZADOS para Funcionario */
 import axios from "axios";
 import { useEffect, useState } from "react";
 import List from "../../Components/List/List";
