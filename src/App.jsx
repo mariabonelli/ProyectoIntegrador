@@ -31,7 +31,8 @@ function App() {
           <Route path="/departamentos" element={<Departamentos />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/solicitudes" element={<Solicitudes />} />
-          <Route path="/" element={<OtrasConsultas />} />
+          <Route path="/" element={<InicioVecino />} />
+          <Route path="/funcionario" element={<InicioFuncionario />} />
           <Route path="/listadotramites" element={<ListadoTramites />} />
           <Route path="/agregartramites" element={<AgregarTramite />} />
           <Route
