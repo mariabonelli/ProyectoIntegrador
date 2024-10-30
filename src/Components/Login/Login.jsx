@@ -5,11 +5,11 @@ import FormControl from "../Form/FormControl";
 import Button from "../Button/Button";
 import InputField from "../Form/InputField";
 import Signup from "../Login/Signup";
+import Banner from "../Banner/Banner";
 
 function Login({ loginIsSuccess }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [user, setUser] = useState(null);
   const [signup, setSignup] = useState(false);
 
   const handleSubmit = () => {
@@ -22,7 +22,6 @@ function Login({ loginIsSuccess }) {
       .then((resp) => {
         console.log(resp.status);
         if (resp.status === 200) {
-          setUser(resp.data);
           localStorage.setItem("user", JSON.stringify(resp.data));
           loginIsSuccess(resp.data);
         }
@@ -33,8 +32,18 @@ function Login({ loginIsSuccess }) {
       });
   };
 
+  const signupIsSuccess = (data) => {
+    console.log("signupIsSuccess", data);
+    setEmail(data.email);
+    setPassword(data.password);
+    setSignup(false);
+  };
+
   return (
     <div className="login_container">
+      <div>
+        <Banner />
+      </div>
       {!signup ? (
         <>
           <h2 className="tittle_iniciosesion">Inicio de Sesión</h2>
@@ -66,7 +75,7 @@ function Login({ loginIsSuccess }) {
           </div>
         </>
       ) : (
-        <Signup />
+        <Signup signupIsSuccess={signupIsSuccess} />
       )}
     </div>
   );

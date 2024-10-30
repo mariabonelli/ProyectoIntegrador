@@ -4,8 +4,9 @@ import "./SignupStyle.css";
 import FormControl from "../Form/FormControl";
 import Button from "../Button/Button";
 import InputField from "../Form/InputField";
+import Banner from "../Banner/Banner";
 
-function Signup() {
+function Signup({ signupIsSuccess }) {
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
   const [telefono, setTelefono] = useState("");
@@ -31,20 +32,27 @@ function Signup() {
     axios
       .post("http://localhost:8080/api/auth/registro", body)
       .then((resp) => {
-        console.log(resp.status);
-        if (resp.status === 200) {
+        if (resp.data) {
           console.log("Registro exitoso", resp.data);
+          localStorage.setItem("user", JSON.stringify(resp.data));
+          signupIsSuccess({
+            email: email,
+            password: password,
+          });
         }
       })
       .catch((error) => {
         console.log(error);
         console.log("Error en el registro");
-        setError("Error en el registro. Por favor verifica tus datos");
+        // setError("Error en el registro. Por favor verifica tus datos");
       });
   };
 
   return (
     <div className="signup_container">
+      <div>
+        <Banner />
+      </div>
       <h2>Registro</h2>
       <FormControl disablebutton={section < 1} handleFormSubmit={handleSubmit}>
         {section === 0 ? (
