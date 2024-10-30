@@ -15,20 +15,7 @@ function TramitePorServicio() {
   return (
     <div className="tramite_por_servicio_container">
       <div className="content_item">
-        <button
-          onClick={() => {
-            axios
-              .get("http://localhost:8080/api/tramites/lista")
-              .then((response) => {
-                console.log(response.data);
-              })
-              .catch((error) => {
-                console.error("Error fetching data:", error);
-              });
-          }}
-        >
-          {pagado ? "Pagado" : "No Pagado"}
-        </button>
+        <button onClick={() => {}}>{pagado ? "Pagado" : "No Pagado"}</button>
         <button
           onClick={() => {
             setDependencia("Dependencia Activada");
