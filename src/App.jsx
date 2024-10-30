@@ -11,6 +11,11 @@ import Login from "./Components/Login/Login";
 function App() {
   const [user, setUser] = useState(null);
 
+  const logOut = () => {
+    localStorage.removeItem("user");
+    setUser(null);
+  };
+
   useEffect(() => {
     const sesion = localStorage.getItem("user");
     console.log(sesion);
@@ -21,7 +26,7 @@ function App() {
 
   return (
     <>
-      <Drawer>
+      <Drawer logOut={logOut}>
         <Routes>
           <Route path="/departamentos" element={<Departamentos />} />
           <Route path="/servicios" element={<Servicios />} />
