@@ -32,7 +32,7 @@ function VistaDeConfiServicio() {
           <InputField placeholder="Nombre de servicio" type="text" />
           <TextArea placeholder="Descripción de servicio" />
           <Checkbox className="checkbox" valor="Agregar imagen" />
-          <Checkbox className="checkbox" valor="Agregar pdf" disabled />
+          <Checkbox className="checkbox" valor="Agregar pdf" />
           <Checkbox className="checkbox" valor="Agregar comentario" />
           <Checkbox
             className="checkbox"
