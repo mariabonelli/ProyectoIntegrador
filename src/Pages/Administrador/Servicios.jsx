@@ -1,5 +1,5 @@
 import React from "react";
-import "./Servicios.css";
+import "./ServiciosStyle.css";
 import FormControl from "../../Components/Form/FormControl";
 
 const Servicios = () => {

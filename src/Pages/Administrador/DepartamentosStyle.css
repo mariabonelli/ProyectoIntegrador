@@ -6,35 +6,20 @@
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #f8f8f8;
-  gap: 10px;
 }
 
 .barra-de-busqueda {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
 }
-
-.barra-de-busqueda input {
-  flex-grow: 1;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-right: 10px;
+.barra-de-busqueda_container_input {
+  width: 70%;
 }
-
-.barra-de-busqueda button {
-  padding: 10px 20px;
-  background-color: #0bb79e;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.barra-de-busqueda button:hover {
-  background-color: #0bb79e;
-}
+/* .barra-de-busqueda > .textfield {
+  background-color: #05a6dd;
+  margin-top: -10px;
+} */
 
 .departamento {
   display: flex;

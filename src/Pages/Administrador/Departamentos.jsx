@@ -1,35 +1,84 @@
 /* SaiyaBits */
-import React from "react";
-import "./Departamentos.css";
-import FormControl from "../../Components/Form/FormControl";
+
+import { useState, useEffect } from "react";
+import "./DepartamentosStyle.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import InputField from "../../Components/Form/InputField";
+import Button from "../../Components/Button/Button";
 
 const Departamentos = () => {
-  const departamentos = [
-    { id: 1, nombre: "Medio ambiente" },
-    { id: 2, nombre: "Aseo" },
-    { id: 3, nombre: "Ornato" },
-  ];
+  const [departamentos, setDepartamentos] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
+
+  const filterByName = departamentos.filter((item) =>
+    item.nombre.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const handleSearch = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:8080/api/departamentos/lista`
+      );
+      setDepartamentos(response.data);
+      console.log(response);
+    } catch (error) {
+      console.error("Error fetching departamentos:", error);
+    }
+  };
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8080/api/departamentos/lista`)
+      .then((res) => {
+        setDepartamentos(res.data);
+      })
+      .catch((error) => {
+        console.log("error", error);
+      });
+  }, []);
+
+  const handleAddClick = () => {
+    navigate("/agregardepartamento");
+  };
+  console.log(departamentos);
 
   return (
-    <div className="form_control">
+    <div>
       <div className="barra-de-busqueda">
-        <input type="text" placeholder="Buscar Departamento o número de ID" />
-        <button>Buscar</button>
+        <div className="barra-de-busqueda_container_input">
+          <InputField
+            value={searchTerm}
+            type={"text"}
+            name={"search"}
+            required={true}
+            placeholder={"Filtrar por nombre"}
+            handleChange={setSearchTerm}
+          />
+        </div>
+        <div>
+          <Button variant={"btn btn_small"} handleChange={handleSearch}>
+            Buscar
+          </Button>
+        </div>
       </div>
       <div className="encabezados">
         <span style={{ marginRight: "20px" }}>ID </span>
         <span style={{ flexGrow: 1 }}> Nombre Departamento</span>
       </div>
-      {departamentos.map((departamento) => (
+      {filterByName.map((departamento) => (
         <div key={departamento.id} className="departamento">
           <span style={{ marginRight: "25px" }}>{departamento.id}</span>
           <span style={{ flexGrow: 1 }}>{departamento.nombre}</span>
           <a href={`/departamento/${departamento.id}`}>Ver detalles</a>
         </div>
       ))}
-      <button className="btn" type="submit">
-        <span>Agregar +</span>
-      </button>
+      <div
+        style={{ display: "flex", justifyContent: "right", padding: "20px" }}
+      >
+        <Button handleClick={handleAddClick}>Agregar + </Button>
+      </div>
     </div>
   );
 };

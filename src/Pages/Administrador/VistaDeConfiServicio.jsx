@@ -3,7 +3,7 @@ import { useState } from "react";
 import FormControl from "../../Components/Form/FormControl";
 import InputField from "../../Components/Form/InputField";
 import TextArea from "../../Components/Form/TextArea";
-import "./AgregarDepartamentoStyle.css";
+import "./VistaDeConfiServicioStyle.css";
 import Checkbox from "../../Components/Form/Checkbox";
 import Button from "../../Components/Button/Button";
 

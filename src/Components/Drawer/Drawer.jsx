@@ -39,7 +39,7 @@ const Rutas = () => {
 function Drawer({ children }) {
   return (
     <>
-      {/* <header>
+      <header>
         <nav>
           <label htmlFor="drawer_toggle" id="drawer_open">
             {" "}
@@ -60,7 +60,7 @@ function Drawer({ children }) {
           </label>
         </nav>
         <span className="drawer_title">Título de página</span>
-      </header> */}
+      </header>
       <aside id="sidebar">
         <Rutas />
       </aside>
