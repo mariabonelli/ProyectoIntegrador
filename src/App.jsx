@@ -44,6 +44,11 @@ function App() {
             element={<TramitePorServicio />}
           ></Route>
           <Route path="/estadotramites" element={<EstadoTramite />}></Route>
+          <Route
+            path="/agregartramites/item/:id"
+            element={<AgregarTramite />}
+          ></Route>
+          <Route path="/agregartramites" element={<AgregarTramite />}></Route>
         </Routes>
       </Drawer>
     </>
