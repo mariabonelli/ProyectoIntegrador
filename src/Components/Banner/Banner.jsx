@@ -4,7 +4,7 @@ import "./BannerStyle.css";
 function Banner() {
   return (
     <>
-      <div className="banner">
+      {/* <div className="banner">
         <div className="banner_icon">
           <img src={rencalogo} alt="ícono" />
         </div>
@@ -12,7 +12,8 @@ function Banner() {
           <span>
             El banner indica que estás en <b>(Indicar sección)</b>
           </span>
-        </div>
+        </div> */}
+      <div>
         <img
           className="banner_colores"
           src={coloresrenca}
