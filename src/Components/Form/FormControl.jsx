@@ -7,12 +7,7 @@ export default function FormControl({ children, handleFormSubmit }) {
   };
   return (
     <div className="form_control">
-      <form onSubmit={handleSubmit}>
-        {children}
-        <button className="btn" type="submit">
-          <span>enviar</span>
-        </button>
-      </form>
+      <form onSubmit={handleSubmit}>{children}</form>
     </div>
   );
 }

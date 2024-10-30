@@ -12,10 +12,17 @@ function App() {
     <>
       <Drawer>
         <Routes>
-          <Route path="/departamentos" element={<Departamentos />} />
+          <Route path="/" element={<Departamentos />} />
           <Route path="/servicios" element={<Servicios />} />
-          <Route path="/solicitudes" element={<Solicitudes />} />
-          <Route path="/" element={<VistaDeConfiServicio />} />
+          <Route
+            path="/agregardepartamento"
+            element={<AgregarDepartamento />}
+          />
+          <Route path="/agregarservicio" element={<AgregarServicio />} />
+          <Route
+            path="/configuracionservicio"
+            element={<VistaDeConfiServicio />}
+          />
         </Routes>
       </Drawer>
     </>

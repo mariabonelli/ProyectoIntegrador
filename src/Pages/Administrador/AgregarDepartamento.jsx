@@ -37,6 +37,9 @@ function AgregarDepartamento() {
             placeholder={"Descripción del departamento"}
             handleChange={setDescripcion}
           />
+          <button className="btn" type="submit">
+            <span>Confirmar</span>
+          </button>
         </FormControl>
       </div>
     </div>

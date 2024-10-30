@@ -5,6 +5,7 @@ import InputField from "../../Components/Form/InputField";
 import TextArea from "../../Components/Form/TextArea";
 import "./AgregarDepartamentoStyle.css";
 import Checkbox from "../../Components/Form/Checkbox";
+import Button from "../../Components/Button/Button";
 
 function VistaDeConfiServicio() {
   const [nombreConfi, setNombreConfi] = useState("");
@@ -27,7 +28,7 @@ function VistaDeConfiServicio() {
   };
   return (
     <div className="configurar_vista_servicio_container">
-      <div className="configurar_vista_servicio_form">
+      <div className="configurar_vista_servicio_container_form">
         <FormControl handleFormSubmit={handleFormSubmit}>
           <InputField placeholder="Nombre de servicio" type="text" />
           <TextArea placeholder="Descripción de servicio" />
@@ -39,6 +40,9 @@ function VistaDeConfiServicio() {
             valor="Agregar Términos y condiciones"
           />
           <TextArea placeholder="Escriba términos y condiciones" />
+          <Button className="btn">
+            <span>Confirmar</span>
+          </Button>
         </FormControl>
       </div>
     </div>
