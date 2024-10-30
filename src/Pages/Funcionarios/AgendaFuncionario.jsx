@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Calendar from "../Components/Calendar/Calendar";
-import Button from "../Components/Button/Button";
+import Calendar from "../../Components/Calendar/Calendar";
+import Button from "../../Components/Button/Button";
 
 const Data = [
   {
@@ -12,7 +12,7 @@ const Data = [
   {
     fechaHora: "2024-10-29 18:00",
     id: "2",
-    estado: "AGENDADO",
+    estado: "CANCELADO",
   },
   {
     fechaHora: "2024-10-29 16:00",
@@ -31,19 +31,22 @@ const Data = [
   },
 ];
 
-function Agenda() {
+function AgendaFuncionario() {
   const [data, setData] = useState([]);
   useEffect(() => {
     setData(Data);
-    /*console.log("axios");
+
+    /*
+    console.log("axios");
     axios
-      .get("http://localhost:8080/api/agendamientos/1/ver?tipo=VECINO")
+      .get("http://localhost:8080/api/agendamientos/1/veragendamientos")
       .then((respuesta) => {
         setData(respuesta.data);
       })
       .catch((error) => {
         console.log(error);
-      }); */
+      });
+      */
   }, []);
 
   const suspenderAgendamiento = (item) => {
@@ -68,4 +71,4 @@ function Agenda() {
   );
 }
 
-export default Agenda;
+export default AgendaFuncionario;

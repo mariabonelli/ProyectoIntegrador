@@ -30,6 +30,9 @@ const Rutas = () => {
         <a>Perfil</a>
       </li>
       <li>
+        <Link to="/AgendaFuncionario">Agenda Funcionario</Link>
+      </li>
+      <li>
         <a>Cerrar sesión</a>
       </li>
     </ul>
