@@ -1,0 +1,68 @@
+/* Departamentos.css */
+.contenedor {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+}
+
+.barra-de-busqueda {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.barra-de-busqueda input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.barra-de-busqueda button {
+  padding: 10px 20px;
+  background-color: #0bb79e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.barra-de-busqueda button:hover {
+  background-color: #0bb79e;
+}
+
+.departamento {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.departamento:hover {
+  background-color: #f1f1f1;
+}
+
+.departamento input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.departamento a {
+  color: #05a6dd;
+  text-decoration: none;
+}
+
+.departamento a:hover {
+  text-decoration: underline;
+}
+
+.encabezados {
+  color: #5fd6f2;
+}

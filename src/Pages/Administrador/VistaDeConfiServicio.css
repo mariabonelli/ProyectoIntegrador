@@ -1,0 +1,13 @@
+.configurar_vista_servicio_container {
+  width: 600px;
+  max-width: 100%;
+  margin: 30px auto;
+}
+
+.configurar_vista_servicio_container_form {
+  max-width: 100%;
+}
+
+.configurar_vista_servicio_container_form button {
+  width: 100%;
+}
