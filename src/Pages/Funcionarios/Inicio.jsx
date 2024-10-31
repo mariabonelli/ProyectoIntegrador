@@ -14,7 +14,7 @@ function Inicio() {
     <div className="container_inicio_funcionario">
       <List>
         <Button
-          handleClick={() => navigate("/listadotramites")}
+          handleClick={() => navigate("/administraciondetramites")}
           variant={"btn_outlined"}
         >
           <ListItemTitle subtitle={"Gestiona trámites para la mascota"}>
@@ -24,7 +24,7 @@ function Inicio() {
       </List>
       <List>
         <Button
-          handleClick={() => navigate("/listadotramites")}
+          handleClick={() => navigate("/administraciondetramites")}
           variant={"btn_outlined"}
         >
           <ListItemTitle subtitle={"Gestiona trámites para áreas verdes"}>
@@ -53,9 +53,11 @@ function Inicio() {
         </Button>
       </List>
       <List>
-        <ListItemTitle subtitle={"Revisa el historial de tus notificaciones"}>
-          Historial de notificaciones
-        </ListItemTitle>
+        <Button handleClick={() => navigate("")} variant={"btn_outlined"}>
+          <ListItemTitle subtitle={"Revisa el historial de tus notificaciones"}>
+            Historial de notificaciones
+          </ListItemTitle>
+        </Button>
       </List>
     </div>
   );
