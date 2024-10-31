@@ -1,0 +1,33 @@
+.content_timepicker .react-calendar__month-view__weekdays {
+  display: flex;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+
+.content_timepicker .react-calendar__tile:hover {
+  border-color: #333;
+}
+
+.content_timepicker .react-calendar__tile {
+  background-color: #fff;
+  color: #333;
+  padding: 10px;
+  border: 2px solid transparent;
+  overflow: hidden;
+  box-shadow: none;
+  outline: none;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.content_timepicker .react-calendar__tile--now {
+  border-color: var(--primary-color);
+}
+
+.container_timepicker .timepicker_title {
+  display: flex;
+  margin: 6px;
+  font-family: Arial, Helvetica, sans-serif;
+}

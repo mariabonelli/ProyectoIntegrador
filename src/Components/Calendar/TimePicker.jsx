@@ -3,6 +3,7 @@ import Calendar from "react-calendar";
 import List from "../List/List";
 import ListItemTitle from "../List/ListItemTitle";
 import Button from "../Button/Button";
+import "./TimePickerStyle.css";
 
 const horasDisponibles = [
   {
@@ -11,7 +12,7 @@ const horasDisponibles = [
     estado: "DISPONIBLE",
     horario: {
       id: 1,
-      fecha: "2024-10-30",
+      fecha: "2024-10-31",
       horaInicio: "08:00",
       horaFin: "17:00",
     },
