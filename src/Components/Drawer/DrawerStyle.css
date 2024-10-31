@@ -114,7 +114,14 @@ main {
 .vertical_list > li > a:hover {
   background-color: rgba(0, 0, 0, 0.1);
 }
-nav .ui_list {
+.container_user_drawer {
+  padding: 0 15px;
+}
+.drawer_container_img {
+  margin: 30px 15px -40px 30px;
+}
+
+.container_user_drawer .ui_list {
   background-color: var(--primary-color) !important;
   box-shadow: none !important;
 }
