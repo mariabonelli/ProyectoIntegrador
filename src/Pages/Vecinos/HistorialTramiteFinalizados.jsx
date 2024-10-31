@@ -1,23 +1,27 @@
-/* PatiDevs */
+/*  PatiDevs Listado general de Tramites exclusivivamente FINALIZADOS para vecino */
+/* Vecino */
 import axios from "axios";
 import { useEffect, useState } from "react";
 import List from "../../Components/List/List";
 import ListItemTitle from "../../Components/List/ListItemTitle";
+import { useParams } from "react-router-dom";
 
-const user_id = 1;
-const user_tipo = "VECINO";
-
-function HIstorialTramiteFinalizados() {
+function HistorialTramiteFinalizados() {
   const [data, setData] = useState([]);
+
+  const { id } = useParams();
   const [route, setRoute] = useState(
     `http://localhost:8080/api/solicitudes/lista/${id}`
   );
 
-  const filtroPorVecinoId = data.filter((item) => item.vecino._id === user_id);
+  const filtroPorVecinoID = data.filter((item) => {
+    return item.vecino?._id == id;
+  });
 
-  const filtroPorFinalizado = filtroPorVecinoId.filter(
-    (item) => item.estado === "FINALIZADO"
-  );
+  // Filtrar por estado "FINALIZADO"
+  const filtroPorFinalizado = filtroPorVecinoID.filter((item) => {
+    return item.estado === "FINALIZADO";
+  });
 
   useEffect(() => {
     axios.get(route).then((response) => {
@@ -26,6 +30,7 @@ function HIstorialTramiteFinalizados() {
       }
     });
   }, [route]);
+
   return (
     <div style={{ margin: "20px auto", maxWidth: "100%" }}>
       {filtroPorFinalizado.map((item) => (
@@ -43,7 +48,6 @@ function HIstorialTramiteFinalizados() {
             })}
             action={item.estado}
           >
-            {" "}
             {item.tramite.nombre}
           </ListItemTitle>
         </List>
@@ -52,4 +56,4 @@ function HIstorialTramiteFinalizados() {
   );
 }
 
-export default HIstorialTramiteFinalizados;
+export default HistorialTramiteFinalizados;

@@ -1,6 +1,4 @@
-import { Children } from "react";
-
-/* PatiDevs */
+/* PatiDevs Otras consultas para Vecino desde InicioVecino */
 import List from "../../Components/List/List";
 import ListItemTitle from "../../Components/List/ListItemTitle";
 import "./OtrasConsultasStyle.css";

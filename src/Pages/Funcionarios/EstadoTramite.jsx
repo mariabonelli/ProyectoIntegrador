@@ -1,4 +1,4 @@
-/* PatiDevs */
+/* PatiDevs Muestra los Estados de lo Tramites generales en vista Funcionario*/
 /* Funcionario */
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -16,11 +16,7 @@ function EstadoTramite() {
   );
   const [filter, setFilter] = useState(undefined);
 
-  const filtroPorFinalizado = data.filter((item) =>
-    filter === undefined
-      ? item.estado !== "FINALIZADO"
-      : item.estado !== "FINALIZADO" && item.estado === filter
-  );
+  const filtroPorFinalizado = data.filter((item) => filter === "FINALIZADO");
 
   useEffect(() => {
     axios.get(route).then((response) => {

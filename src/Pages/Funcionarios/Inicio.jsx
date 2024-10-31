@@ -1,4 +1,5 @@
-/* PatiDevs */
+/* PatiDevs El inicio de Funcionario, se entra en /funcionario
+ */
 
 import Button from "../../Components/Button/Button";
 import List from "../../Components/List/List";

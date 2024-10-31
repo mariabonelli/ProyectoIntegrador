@@ -1,4 +1,4 @@
-/* PatiDevs */
+/* PatiDevs Vista Principal del Vecino */
 import Button from "../../Components/Button/Button";
 import List from "../../Components/List/List";
 import ListItemTitle from "../../Components/List/ListItemTitle";
@@ -42,7 +42,7 @@ function Inicio() {
       </List>
       <List>
         <Button
-          handleClick={() => navigate("/historialtramitesfinalizados/${id}")}
+          handleClick={() => navigate("/historialtramitesfinalizados")}
           variant={"btn_outlined"}
         >
           <ListItemTitle subtitle={"Revisa los trámites finalizados"}>

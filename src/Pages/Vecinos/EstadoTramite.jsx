@@ -1,4 +1,4 @@
-/* PatiDevs */
+/* PatiDevs Muestra los Estados de lo Tramites de Vecino*/
 /* Vecino */
 import axios from "axios";
 import { useEffect, useState } from "react";
