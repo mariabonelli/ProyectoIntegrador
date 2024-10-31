@@ -4,7 +4,7 @@ import "./SignupStyle.css";
 import FormControl from "../Form/FormControl";
 import Button from "../Button/Button";
 import InputField from "../Form/InputField";
-import Banner from "../Banner/Banner";
+import rencalogo from "../../assets/Renca.png";
 
 function Signup({ signupIsSuccess }) {
   const [nombre, setNombre] = useState("");
@@ -51,7 +51,7 @@ function Signup({ signupIsSuccess }) {
   return (
     <div className="signup_container">
       <div>
-        <Banner />
+        <img width={250} src={rencalogo} alt="ícono" />
       </div>
       <h2>Registro</h2>
       <FormControl disablebutton={section < 1} handleFormSubmit={handleSubmit}>

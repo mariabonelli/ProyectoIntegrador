@@ -5,7 +5,7 @@ import FormControl from "../Form/FormControl";
 import Button from "../Button/Button";
 import InputField from "../Form/InputField";
 import Signup from "../Login/Signup";
-import Banner from "../Banner/Banner";
+import rencalogo from "../../assets/Renca.png";
 
 function Login({ loginIsSuccess }) {
   const [email, setEmail] = useState("");
@@ -42,7 +42,7 @@ function Login({ loginIsSuccess }) {
   return (
     <div className="login_container">
       <div>
-        <Banner />
+        <img width={250} src={rencalogo} alt="ícono" />
       </div>
       {!signup ? (
         <>

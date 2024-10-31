@@ -80,6 +80,18 @@
   color: var(--primary-color);
   box-shadow: none;
 }
+.btn_outlined_secondary {
+  background-color: transparent;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+  box-shadow: none;
+}
+.btn_outlined_white {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  box-shadow: none;
+}
 .btn_text_primary {
   border-color: var(--primary-color);
   color: var(--primary-color);
