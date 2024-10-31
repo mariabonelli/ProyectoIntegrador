@@ -79,9 +79,6 @@ function VistaDeConfiServicio() {
             placeholder={"Escriba términos y condiciones"}
             handleChange={setTextoTerminosCondiciones}
           />
-          <button className="btn">
-            <span>Confirmar</span>
-          </button>
         </FormControl>
       </div>
     </div>

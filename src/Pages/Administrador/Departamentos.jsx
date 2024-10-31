@@ -45,7 +45,7 @@ const Departamentos = () => {
   console.log(departamentos);
 
   return (
-    <div className="container">
+    <div className="container_lista">
       <div className="barra_de_busqueda_container">
         <div className="barra_de_busqueda_container_input">
           <InputField
@@ -64,13 +64,13 @@ const Departamentos = () => {
         </div>
       </div>
       <div className="encabezados">
-        <span>ID </span>
-        <span> Nombre Departamento</span>
+        <span className="encabezado_id">ID </span>
+        <span className="encabezado_nombre"> Nombre Departamento</span>
       </div>
       {filterByName.map((departamento) => (
         <div key={departamento.id} className="departamento">
-          <span>{departamento.id}</span>
-          <span>{departamento.nombre}</span>
+          <span className="span1">{departamento.id}</span>
+          <span className="span2">{departamento.nombre}</span>
           <a href={`/departamento/${departamento.id}`}>Ver detalles</a>
         </div>
       ))}
