@@ -36,17 +36,15 @@ function AgendaFuncionario() {
   useEffect(() => {
     setData(Data);
 
-    /*
     console.log("axios");
     axios
       .get("http://localhost:8080/api/agendamientos/1/veragendamientos")
       .then((respuesta) => {
-        setData(respuesta.data);
+        console.log(respuesta.data);
       })
       .catch((error) => {
         console.log(error);
       });
-      */
   }, []);
 
   const suspenderAgendamiento = (item) => {

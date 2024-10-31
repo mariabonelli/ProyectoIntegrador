@@ -58,6 +58,12 @@ const Rutas = ({ logOut }) => {
           <a>Otras consultas</a>
         </li>
         <li>
+          <Link to="/AgendaFuncionario">Agenda Funcionario</Link>
+        </li>
+        <li>
+          <Link to="/Agenda">Agenda</Link>
+        </li>
+        <li>
           <a>Perfil</a>
         </li>
         <li>
