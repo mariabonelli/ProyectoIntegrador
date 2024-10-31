@@ -1,12 +1,24 @@
-export default function FormControl({ children, handleFormSubmit }) {
+import "../Button/ButtonStyle.css";
+
+export default function FormControl({
+  children,
+  handleFormSubmit,
+  disablebutton,
+}) {
   const handleSubmit = (event) => {
     event.preventDefault();
-    handleFormSubmit(event.target);
+    handleFormSubmit(event);
   };
   return (
     <div className="form_control">
-      <form onSubmit={handleSubmit}>{children}</form>
-      <button type="submit">enviar</button>
+      <form onSubmit={handleSubmit}>
+        {children}
+        {!disablebutton && (
+          <button className="btn" type="submit">
+            <span>enviar</span>
+          </button>
+        )}
+      </form>
     </div>
   );
 }
