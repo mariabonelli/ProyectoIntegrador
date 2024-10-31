@@ -22,6 +22,7 @@ import AgregarTramite from "./Pages/Funcionarios/AgregarTramite";
 import ListadoTramites from "./Pages/Funcionarios/ListadoTramites";
 import ListadoTramitesFinalizados from "./Pages/Funcionarios/ListadoTramiteFinalizado";
 import EstadoTramite from "./Pages/Vecinos/EstadoTramite";
+import HistorialTramiteFinalizados from "./Pages/Vecinos/HistorialTramiteFinalizados";
 
 function App() {
   return (
@@ -49,6 +50,10 @@ function App() {
             element={<AgregarTramite />}
           ></Route>
           <Route path="/agregartramites" element={<AgregarTramite />}></Route>
+          <Route
+            path="/historialtramitesfinalizados/:id"
+            element={<HistorialTramiteFinalizados />}
+          ></Route>
         </Routes>
       </Drawer>
     </>

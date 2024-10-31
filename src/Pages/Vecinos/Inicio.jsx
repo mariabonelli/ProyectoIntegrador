@@ -42,7 +42,7 @@ function Inicio() {
       </List>
       <List>
         <Button
-          handleClick={() => navigate("/otrasconsultas")}
+          handleClick={() => navigate("/historialtramitesfinalizados/${id}")}
           variant={"btn_outlined"}
         >
           <ListItemTitle subtitle={"Revisa los trámites finalizados"}>
