@@ -3,7 +3,7 @@ import "./AlertStyle.css";
 import Button from "../Button/Button";
 
 function Alert({ children, selfclosing, opensection, autoopen }) {
-  const [abierto, setAbierto] = useState(true);
+  const [abierto, setAbierto] = useState(false);
 
   useEffect(() => {
     if (autoopen === undefined) return;
