@@ -6,6 +6,7 @@ import TextArea from "../../Components/Form/TextArea";
 import "./VistaDeConfiServicioStyle.css";
 import Checkbox from "../../Components/Form/Checkbox";
 import Button from "../../Components/Button/Button";
+import Servicios from "./Servicios";
 
 function VistaDeConfiServicio() {
   const [nombreConfi, setNombreConfi] = useState("");
@@ -14,6 +15,7 @@ function VistaDeConfiServicio() {
   const [agregar_pdf, setAgregarPdf] = useState(false);
   const [agregar_comentario, setAgregarComentario] = useState(false);
   const [terminos_condiciones, setTerminosyCondiciones] = useState(false);
+  const [textoTerminosCondiciones, setTextoTerminosCondiciones] = useState("");
 
   const handleFormSubmit = () => {
     const data = {
@@ -23,6 +25,7 @@ function VistaDeConfiServicio() {
       agregar_pdf: agregar_pdf,
       agregar_comentario: agregar_comentario,
       terminos_condiciones: terminos_condiciones,
+      textoTerminosCondiciones: textoTerminosCondiciones,
     };
     console.log(data);
   };
@@ -30,19 +33,55 @@ function VistaDeConfiServicio() {
     <div className="configurar_vista_servicio_container">
       <div className="configurar_vista_servicio_container_form">
         <FormControl handleFormSubmit={handleFormSubmit}>
-          <InputField placeholder="Nombre de servicio" type="text" />
-          <TextArea placeholder="Descripción de servicio" />
-          <Checkbox className="checkbox" valor="Agregar imagen" />
-          <Checkbox className="checkbox" valor="Agregar pdf" disabled />
-          <Checkbox className="checkbox" valor="Agregar comentario" />
-          <Checkbox
-            className="checkbox"
-            valor="Agregar Términos y condiciones"
+          <InputField
+            value={nombreConfi}
+            outlined={true}
+            type={"text"}
+            name={"servicio"}
+            required={true}
+            placeholder={"Nombre de servicio"}
+            handleChange={setNombreConfi}
           />
-          <TextArea placeholder="Escriba términos y condiciones" />
-          <Button className="btn">
+          <TextArea
+            value={descNombreConfi}
+            outlined={true}
+            name={"descripcion_servicio"}
+            required={true}
+            placeholder={"Descripción de servicio"}
+            handleChange={setDescNombreConfi}
+          />
+
+          <Checkbox
+            handleChange={setAgregarImagen}
+            valor={"Agregar imagen"}
+            value={agregar_imagen}
+          />
+          <Checkbox
+            handleChange={setAgregarPdf}
+            valor={"Agregar PDF"}
+            value={agregar_pdf}
+          />
+          <Checkbox
+            handleChange={setAgregarComentario}
+            valor={"Agregar comentario"}
+            value={agregar_comentario}
+          />
+          <Checkbox
+            handleChange={setTerminosyCondiciones}
+            valor={"Agregar Términos y condiciones"}
+            value={terminos_condiciones}
+          />
+          <TextArea
+            value={textoTerminosCondiciones}
+            outlined={true}
+            name={"terminos_y_condiciones"}
+            required={true}
+            placeholder={"Escriba términos y condiciones"}
+            handleChange={setTextoTerminosCondiciones}
+          />
+          <button className="btn">
             <span>Confirmar</span>
-          </Button>
+          </button>
         </FormControl>
       </div>
     </div>

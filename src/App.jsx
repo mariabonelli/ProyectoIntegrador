@@ -25,10 +25,10 @@ function App() {
           <Route path="/agregarservicio" element={<AgregarServicio />} />
 
           <Route
-            path="/vistaDeConfiServicio"
+            path="/vistadeconfiservicio"
             element={<VistaDeConfiServicio />}
           />
-          <Route path="/verDetalles" element={<VerDetalles />} />
+          <Route path="/verdetalles" element={<VerDetalles />} />
         </Routes>
       </Drawer>
     </>
