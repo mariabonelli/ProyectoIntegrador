@@ -45,9 +45,9 @@ const Departamentos = () => {
   console.log(departamentos);
 
   return (
-    <div>
-      <div className="barra-de-busqueda">
-        <div className="barra-de-busqueda_container_input">
+    <div className="container">
+      <div className="barra_de_busqueda_container">
+        <div className="barra_de_busqueda_container_input">
           <InputField
             value={searchTerm}
             type={"text"}
@@ -64,19 +64,17 @@ const Departamentos = () => {
         </div>
       </div>
       <div className="encabezados">
-        <span style={{ marginRight: "20px" }}>ID </span>
-        <span style={{ flexGrow: 1 }}> Nombre Departamento</span>
+        <span>ID </span>
+        <span> Nombre Departamento</span>
       </div>
       {filterByName.map((departamento) => (
         <div key={departamento.id} className="departamento">
-          <span style={{ marginRight: "25px" }}>{departamento.id}</span>
-          <span style={{ flexGrow: 1 }}>{departamento.nombre}</span>
+          <span>{departamento.id}</span>
+          <span>{departamento.nombre}</span>
           <a href={`/departamento/${departamento.id}`}>Ver detalles</a>
         </div>
       ))}
-      <div
-        style={{ display: "flex", justifyContent: "right", padding: "20px" }}
-      >
+      <div className="agregar">
         <Button handleClick={handleAddClick}>Agregar + </Button>
       </div>
     </div>
