@@ -72,7 +72,6 @@ const Servicios = () => {
           <input type="checkbox" />
           <span className="span1">{servicio.id}</span>
           <span className="span2">{servicio.nombre}</span>
-          <a href={`/servicio/${servicio.id}`}>Ver detalles</a>
         </div>
       ))}
       <div className="botones">
