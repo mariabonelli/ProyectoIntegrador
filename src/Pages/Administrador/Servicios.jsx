@@ -1,51 +1,86 @@
-import React from "react";
+/* SaiyaBits */
+
+import { useState, useEffect } from "react";
 import "./ServiciosStyle.css";
-import FormControl from "../../Components/Form/FormControl";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import InputField from "../../Components/Form/InputField";
+import Button from "../../Components/Button/Button";
 
 const Servicios = () => {
-  const servicios = [
-    { id: 1, nombre: "Veterinaria" },
-    { id: 2, nombre: "Poda" },
-    { id: 3, nombre: "Limpieza" },
-    /* { id: 5, nombre: "Consultoría Estratégica" },
-    { id: 6, nombre: "Soluciones Financieras" },
-    { id: 7, nombre: "Seguridad Avanzada" },
-    { id: 8, nombre: "Servicios Esenciales" },
-    { id: 9, nombre: "Redes Conectadas" },
-    { id: 10, nombre: "Innovación Sustentable" }, */
-  ];
+  const [servicios, setServicios] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
+
+  const filterByName = servicios.filter((item) =>
+    item.nombre.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const handleSearch = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:8080/api/servicios/lista`
+      );
+      setServicios(response.data);
+      console.log(response);
+    } catch (error) {
+      console.log("Error fetching servicios:", error);
+    }
+  };
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8080/api/servicios/lista`)
+      .then((res) => {
+        setServicios(res.data);
+      })
+      .catch((error) => {
+        console.log("error", error);
+      });
+  }, []);
+
+  const handleAddClick = () => {
+    navigate("/agregarservicio");
+  };
+  console.log(servicios);
 
   return (
-    <FormControl>
-      <div className="form_control">
-        <div className="barra-de-busqueda">
-          <input type="text" placeholder="Buscar Servicio o número de ID" />
-          <button>Buscar</button>
+    <div className="container_lista">
+      <div className="barra_de_busqueda_container">
+        <div className="barra_de_busqueda_container_input">
+          <InputField
+            value={searchTerm}
+            type={"text"}
+            name={"search"}
+            required={true}
+            placeholder={"Filtrar por nombre"}
+            handleChange={setSearchTerm}
+          />
         </div>
-        <div className="encabezados" style={{ marginLeft: "20px" }}>
-          <span style={{ marginRight: "13px" }}>ID </span>
-          <span style={{ flexGrow: 1 }}> Nombre Servicio</span>
+        <div>
+          <Button variant={"btn btn_small"} handleChange={handleSearch}>
+            Buscar
+          </Button>
         </div>
-        {servicios.map((servicio) => (
-          <div key={servicio.id} className="servicio">
-            <input type="checkbox" />
-            <span style={{ marginRight: "15px" }}>{servicio.id}</span>
-            <span style={{ flexGrow: 1 }}>{servicio.nombre}</span>
-          </div>
-        ))}
       </div>
+      <div className="encabezados">
+        <span className="encabezado_id">ID </span>
+        <span className="encabezado_nombre"> Nombre Servicio</span>
+      </div>
+      {filterByName.map((servicio) => (
+        <div key={servicio.id} className="servicio">
+          <input type="checkbox" />
+          <span className="span1">{servicio.id}</span>
+          <span className="span2">{servicio.nombre}</span>
+          <a href={`/servicio/${servicio.id}`}>Ver detalles</a>
+        </div>
+      ))}
       <div className="botones">
-        <button className="boton_eliminar" type="submit">
-          <span>Eliminar</span>
-        </button>
-        <button className="boton_modificar" type="submit">
-          <span>Modificar</span>
-        </button>
-        <button className="boton_agregar" type="submit">
-          <span>Agregar +</span>
-        </button>
+        <Button handleClick={handleAddClick}>Eliminar </Button>
+        <Button handleClick={handleAddClick}>Modificar </Button>
+        <Button handleClick={handleAddClick}>Agregar + </Button>
       </div>
-    </FormControl>
+    </div>
   );
 };
 

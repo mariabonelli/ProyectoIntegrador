@@ -47,9 +47,6 @@ function AgregarServicio() {
             placeholder={"Descripción del servicio"}
             handleChange={setDescripcionServicio}
           />
-          <button className="btn" type="submit">
-            <span>Confirmar</span>
-          </button>
         </FormControl>
       </div>
     </div>
