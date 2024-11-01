@@ -16,7 +16,9 @@ function EstadoTramite() {
   );
   const [filter, setFilter] = useState(undefined);
 
-  const filtroPorVecinoID = data.filter((item) => item.vecino._id === user_id);
+  const filtroPorVecinoID = data.filter(
+    (item) => item.vecino && item.vecino._id === user_id
+  );
 
   const filtroPorFinalizado = filtroPorVecinoID.filter((item) =>
     filter === undefined
@@ -70,7 +72,7 @@ function EstadoTramite() {
         </Button>
       </div>
       {filtroPorFinalizado.map((item) => (
-        <List key={item.id}>
+        <List key={item._id}>
           <ListItemTitle
             subtitle={new Date(item.createAt).toLocaleString("es-ES", {
               weekday: "long", // "lunes", "martes", etc.

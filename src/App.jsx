@@ -22,6 +22,7 @@ import AgregarTramite from "./Pages/Funcionarios/AgregarTramite";
 import ListadoTramites from "./Pages/Funcionarios/ListadoTramites";
 import ListadoTramitesFinalizados from "./Pages/Funcionarios/ListadoTramiteFinalizado";
 import EstadoTramite from "./Pages/Vecinos/EstadoTramite";
+
 import AdministracionDeTramites from "./Pages/Funcionarios/AdministracionDeTramites";
 
 function App() {

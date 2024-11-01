@@ -11,7 +11,7 @@
 .Listado_Tramites_body {
   display: flex;
 }
-.ui_list {
+.Listado_Tramites_body .ui_list {
   margin: auto !important;
 }
 .listado_tramites_action {

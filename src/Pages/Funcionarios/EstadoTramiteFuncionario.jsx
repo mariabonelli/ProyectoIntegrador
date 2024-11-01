@@ -9,7 +9,7 @@ import Button from "../../Components/Button/Button";
 const user_id = 0;
 const user_tipo = "FUNCIONARIO";
 
-function EstadoTramite() {
+function EstadoTramiteFuncionario() {
   const [data, setData] = useState([]);
   const [route, setRoute] = useState(
     `http://localhost:8080/api/solicitudes/lista`
@@ -86,4 +86,4 @@ function EstadoTramite() {
   );
 }
 
-export default EstadoTramite;
+export default EstadoTramiteFuncionario;
