@@ -14,6 +14,10 @@ import InicioVecino from "./Pages/Vecinos/Inicio";
 
 import InicioFuncionario from "./Pages/Funcionarios/Inicio";
 
+import { useEffect, useState } from "react";
+import axios from "axios";
+
+import Login from "./Components/Login/Login";
 import OtrasConsultas from "./Pages/Vecinos/OtrasConsultas";
 
 import TramitePorServicio from "./Pages/Vecinos/TramitePorServicio";
@@ -26,9 +30,24 @@ import EstadoTramite from "./Pages/Vecinos/EstadoTramite";
 import AdministracionDeTramites from "./Pages/Funcionarios/AdministracionDeTramites";
 
 function App() {
+  const [user, setUser] = useState(null);
+
+  const logOut = () => {
+    localStorage.removeItem("user");
+    setUser(null);
+  };
+
+  useEffect(() => {
+    const sesion = localStorage.getItem("user");
+    console.log(sesion);
+    if (sesion) {
+      setUser(sesion);
+    }
+  }, []);
+
   return (
     <>
-      <Drawer>
+      <Drawer logOut={logOut}>
         <Routes>
           <Route
             path="/historialtramitesfinalizados"
@@ -58,6 +77,9 @@ function App() {
             path="/agregartramites/item/:id"
             element={<AgregarTramite />}
           ></Route>
+          <Route path="/departamentos" element={<Departamentos />} />
+          <Route path="/servicios" element={<Servicios />} />
+          <Route path="/solicitudes" element={<Solicitudes />} />
           <Route path="/agregartramites" element={<AgregarTramite />}></Route>
           <Route
             path="/historialtramitesfinalizados/:id"
@@ -69,8 +91,8 @@ function App() {
           ></Route>
         </Routes>
       </Drawer>
+      {!user && <Login loginIsSuccess={setUser} />}
     </>
   );
 }
-
 export default App;
