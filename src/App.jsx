@@ -73,6 +73,7 @@ function App() {
             element={<TramitePorServicio />}
           ></Route>
           <Route path="/estadotramites" element={<EstadoTramite />}></Route>
+          <Route path="/agregartramites" element={<AgregarTramite />}></Route>
           <Route
             path="/agregartramites/item/:id"
             element={<AgregarTramite />}
@@ -80,7 +81,6 @@ function App() {
           <Route path="/departamentos" element={<Departamentos />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/solicitudes" element={<Solicitudes />} />
-          <Route path="/agregartramites" element={<AgregarTramite />}></Route>
           <Route
             path="/historialtramitesfinalizados/:id"
             element={<HistorialTramiteFinalizados />}

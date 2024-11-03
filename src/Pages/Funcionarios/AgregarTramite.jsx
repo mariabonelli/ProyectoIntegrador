@@ -22,6 +22,19 @@ function AgregarTramite() {
   const { id } = useParams();
 
   const handleDeleteItem = () => {
+    const body = {};
+    if (id) {
+      axios
+        .delete(`http://localhost:8080/api/tramites/borrar/${id}`, body)
+        .then((response) => {
+          if (response) {
+            navigate("/listadotramites");
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    }
     console.log(id);
   };
 

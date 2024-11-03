@@ -11,16 +11,24 @@ function ListadoTramites() {
   const [selecteditems, SetSelecteditem] = useState(null);
   const [data, setData] = useState([]);
 
+  const token = localStorage.getItem("token");
+
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/api/tramites/lista`).then((response) => {
-      if (response) {
-        setData(response.data);
-      }
-    });
+    axios
+      .get(`http://localhost:8080/api/tramites/lista`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
+      .then((response) => {
+        if (response) {
+          setData(response.data);
+        }
+      });
   }, []);
-
+  console.log(token);
   return (
     <div className="listado_tramites_container">
       <div className="listado_tramites_body">
