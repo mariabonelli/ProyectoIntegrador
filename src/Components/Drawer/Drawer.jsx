@@ -6,10 +6,10 @@ const Rutas = () => {
   return (
     <ul className="vertical_list">
       <li>
-        <Link to="/">Inicio</Link>
+        <Link to="/departamentos">Lista de departamentos</Link>
       </li>
       <li>
-        <Link to="/servicios">Servicios</Link>
+        <Link to="/departamentos">Departamentos</Link>
       </li>
       <li>
         <a>Trámites veterinarios</a>

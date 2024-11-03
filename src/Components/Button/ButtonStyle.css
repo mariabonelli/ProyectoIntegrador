@@ -127,3 +127,12 @@
 .btn_small > span {
   padding: 10px 16px;
 }
+.btn_disabled {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.2);
+  box-shadow: none;
+  cursor: no-drop;
+}
+.btn_disabled:hover > span {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+}

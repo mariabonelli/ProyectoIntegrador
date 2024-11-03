@@ -8,6 +8,7 @@ function TextArea({
   rows,
   placeholder,
   required,
+  value,
 }) {
   const id = useId();
   return (
@@ -18,6 +19,7 @@ function TextArea({
           onChange={(e) => {
             handleChange(e.target.value);
           }}
+          value={value}
           name={name}
           id={id}
           rows={rows}

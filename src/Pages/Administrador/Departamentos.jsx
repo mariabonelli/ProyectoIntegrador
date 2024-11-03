@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import "./DepartamentosStyle.css";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import InputField from "../../Components/Form/InputField";
 import Button from "../../Components/Button/Button";
 
@@ -71,7 +71,7 @@ const Departamentos = () => {
         <div key={departamento.id} className="departamento">
           <span className="span1">{departamento.id}</span>
           <span className="span2">{departamento.nombre}</span>
-          <a href={`/departamento/${departamento.id}`}>Ver detalles</a>
+          <Link to={`/servicios/${departamento.id}`}>servicios asociados</Link>
         </div>
       ))}
       <div className="agregar">

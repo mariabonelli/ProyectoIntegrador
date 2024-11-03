@@ -1,51 +1,173 @@
-import React from "react";
+import { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
 import "./ServiciosStyle.css";
-import FormControl from "../../Components/Form/FormControl";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import InputField from "../../Components/Form/InputField";
+import Button from "../../Components/Button/Button";
+import Alert from "../../Components/Alert/Alert";
 
 const Servicios = () => {
-  const servicios = [
-    { id: 1, nombre: "Veterinaria" },
-    { id: 2, nombre: "Poda" },
-    { id: 3, nombre: "Limpieza" },
-    /* { id: 5, nombre: "Consultoría Estratégica" },
-    { id: 6, nombre: "Soluciones Financieras" },
-    { id: 7, nombre: "Seguridad Avanzada" },
-    { id: 8, nombre: "Servicios Esenciales" },
-    { id: 9, nombre: "Redes Conectadas" },
-    { id: 10, nombre: "Innovación Sustentable" }, */
-  ];
+  const [servicios, setServicios] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [itemSelected, setItemSelected] = useState(null);
+  const [itemSelectedName, setItemSelectedName] = useState(null);
+  const [deleteDialog, setDeleteDialog] = useState(false);
+
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  const filterByName = servicios.filter((item) =>
+    item.nombre.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
+  const handleSearch = async () => {
+    try {
+      const response = await axios.get(
+        `http://localhost:8080/api/servicios/lista`
+      );
+      setServicios(response.data);
+      console.log(response);
+    } catch (error) {
+      console.log("Error fetching servicios:", error);
+    }
+  };
+
+  const handledeleteItem = () => {
+    setDeleteDialog(!deleteDialog);
+    setTimeout(() => {
+      setDeleteDialog(false);
+    }, 1000);
+  };
+
+  const handleDeleteItemById = () => {
+    axios
+      .delete(`http://localhost:8080/api/servicios/eliminar/${itemSelected}`)
+      .then((res) => {
+        if (res.data) {
+          axios
+            .get(`http://localhost:8080/api/servicios/${id}/verlistaservicios`)
+            .then((res) => {
+              setServicios(res.data);
+              handledeleteItem();
+              setItemSelected(null);
+            })
+            .catch((error) => {
+              console.log("error", error);
+            });
+        }
+      })
+      .catch((error) => {});
+  };
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8080/api/servicios/${id}/verlistaservicios`)
+      .then((res) => {
+        setServicios(res.data);
+      })
+      .catch((error) => {
+        console.log("error", error);
+      });
+  }, []);
+
+  const handleAddClick = () => {
+    navigate("/agregarservicio");
+  };
+  console.log(id);
+  console.log(servicios);
 
   return (
-    <FormControl>
-      <div className="form_control">
-        <div className="barra-de-busqueda">
-          <input type="text" placeholder="Buscar Servicio o número de ID" />
-          <button>Buscar</button>
+    <>
+      <div className="container_lista">
+        <div className="barra_de_busqueda_container">
+          <div className="barra_de_busqueda_container_input">
+            <InputField
+              value={searchTerm}
+              type={"text"}
+              name={"search"}
+              required={true}
+              placeholder={"Filtrar Listado de Servicios "}
+              handleChange={setSearchTerm}
+            />
+          </div>
+          <div>
+            <Button variant={"btn btn_small"} handleChange={handleSearch}>
+              Buscar
+            </Button>
+          </div>
         </div>
-        <div className="encabezados" style={{ marginLeft: "20px" }}>
-          <span style={{ marginRight: "13px" }}>ID </span>
-          <span style={{ flexGrow: 1 }}> Nombre Servicio</span>
+        <div className="encabezados">
+          <span className="encabezado_id">ID </span>
+          <span className="encabezado_nombre"> Nombre Servicio</span>
         </div>
-        {servicios.map((servicio) => (
+        {filterByName.map((servicio) => (
           <div key={servicio.id} className="servicio">
-            <input type="checkbox" />
-            <span style={{ marginRight: "15px" }}>{servicio.id}</span>
-            <span style={{ flexGrow: 1 }}>{servicio.nombre}</span>
+            <input
+              type="checkbox"
+              checked={itemSelected === servicio.id}
+              onChange={() => {
+                setItemSelected(servicio.id),
+                  setItemSelectedName(servicio.nombre);
+              }}
+            />
+            <span className="span1">{servicio.id}</span>
+            <span className="span2">{servicio.nombre}</span>
+
+            <Link to={`/agregarservicio/${servicio.id}`}>Ver detalles</Link>
           </div>
         ))}
+        <div className="botones">
+          <Button
+            handleClick={() => handledeleteItem()}
+            disabled={itemSelected === null ? true : false}
+          >
+            Eliminar{" "}
+          </Button>
+          <Button
+            handleClick={() => navigate(`/agregarservicio/${itemSelected}`)}
+            disabled={itemSelected === null ? true : false}
+          >
+            Modificar{" "}
+          </Button>
+          <Button
+            handleClick={() =>
+              navigate(`/agregarservicio/${itemSelected}/${id}`)
+            }
+          >
+            Agregarr +{" "}
+          </Button>
+        </div>
       </div>
-      <div className="botones">
-        <button className="boton_eliminar" type="submit">
-          <span>Eliminar</span>
-        </button>
-        <button className="boton_modificar" type="submit">
-          <span>Modificar</span>
-        </button>
-        <button className="boton_agregar" type="submit">
-          <span>Agregar +</span>
-        </button>
-      </div>
-    </FormControl>
+      <Alert key={itemSelected} autoopen={deleteDialog} selfclosing={true}>
+        <div
+          style={{
+            padding: "20px 15px",
+            textAlign: "center",
+            fontSize: "17px",
+
+            color: "var(--tertiary-color)",
+          }}
+        >
+          ¿Confirmas eliminar el Servicio <strong>'{itemSelectedName}'</strong>{" "}
+          ?
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              padding: "25px 0 0",
+            }}
+          >
+            <Button
+              handleClick={() => handleDeleteItemById()}
+              variant={"btn_secondary"}
+            >
+              Confirmar
+            </Button>
+          </div>
+        </div>
+      </Alert>
+    </>
   );
 };
 

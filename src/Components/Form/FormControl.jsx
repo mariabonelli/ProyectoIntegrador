@@ -9,9 +9,11 @@ export default function FormControl({ children, handleFormSubmit, sinboton }) {
     <div className="form_control">
       <form onSubmit={handleSubmit}>
         {children}
-        <button className="btn" type="submit">
-          <span>enviar</span>
-        </button>
+        {!sinboton && (
+          <button className="btn" type="submit">
+            <span>enviar</span>
+          </button>
+        )}
       </form>
     </div>
   );
