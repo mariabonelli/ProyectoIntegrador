@@ -57,11 +57,6 @@ const Departamentos = () => {
             handleChange={setSearchTerm}
           />
         </div>
-        <div>
-          <Button variant={"btn btn_small"} handleChange={handleSearch}>
-            Buscar
-          </Button>
-        </div>
       </div>
       <div className="encabezados">
         <span className="encabezado_id">ID </span>

@@ -14,7 +14,7 @@ function App() {
       <Drawer>
         <Routes>
           <Route path="/departamentos" element={<Departamentos />} />
-          <Route path="/servicios/:id" element={<Servicios />} />
+          <Route path="/servicios/:departamento" element={<Servicios />} />
           <Route
             path="/agregardepartamento"
             element={<AgregarDepartamento />}

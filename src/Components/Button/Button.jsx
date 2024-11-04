@@ -7,7 +7,7 @@ function Button({ children, variant, handleClick, disabled }) {
     <>
       <button
         className={`btn ${btnclass ? btnclass : ""}`}
-        onClick={!disabled && handleClick}
+        onClick={disabled ? undefined : handleClick}
       >
         <span>{children} </span>
       </button>

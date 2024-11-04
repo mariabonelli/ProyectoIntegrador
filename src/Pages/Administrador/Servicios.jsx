@@ -13,8 +13,9 @@ const Servicios = () => {
   const [itemSelected, setItemSelected] = useState(null);
   const [itemSelectedName, setItemSelectedName] = useState(null);
   const [deleteDialog, setDeleteDialog] = useState(false);
+  const [departamentos, setDepartamentos] = useState([]);
 
-  const { id } = useParams();
+  const { departamento } = useParams();
   const navigate = useNavigate();
 
   const filterByName = servicios.filter((item) =>
@@ -46,7 +47,9 @@ const Servicios = () => {
       .then((res) => {
         if (res.data) {
           axios
-            .get(`http://localhost:8080/api/servicios/${id}/verlistaservicios`)
+            .get(
+              `http://localhost:8080/api/servicios/${departamento}/verlistaservicios`
+            )
             .then((res) => {
               setServicios(res.data);
               handledeleteItem();
@@ -59,27 +62,34 @@ const Servicios = () => {
       })
       .catch((error) => {});
   };
+  const FilterDepartamentoById = departamentos.filter(
+    (item) => item.id === Number(departamento)
+  );
 
   useEffect(() => {
     axios
-      .get(`http://localhost:8080/api/servicios/${id}/verlistaservicios`)
+      .get(
+        `http://localhost:8080/api/servicios/${departamento}/verlistaservicios`
+      )
       .then((res) => {
-        setServicios(res.data);
+        axios
+          .get("http://localhost:8080/api/departamentos/lista")
+          .then((resp) => {
+            setDepartamentos(resp.data);
+            setServicios(res.data);
+          });
       })
       .catch((error) => {
         console.log("error", error);
       });
   }, []);
 
-  const handleAddClick = () => {
-    navigate("/agregarservicio");
-  };
-  console.log(id);
-  console.log(servicios);
-
   return (
     <>
       <div className="container_lista">
+        <h1>
+          {FilterDepartamentoById[0] && FilterDepartamentoById[0].nombre}{" "}
+        </h1>
         <div className="barra_de_busqueda_container">
           <div className="barra_de_busqueda_container_input">
             <InputField
@@ -90,11 +100,6 @@ const Servicios = () => {
               placeholder={"Filtrar Listado de Servicios "}
               handleChange={setSearchTerm}
             />
-          </div>
-          <div>
-            <Button variant={"btn btn_small"} handleChange={handleSearch}>
-              Buscar
-            </Button>
           </div>
         </div>
         <div className="encabezados">
@@ -114,7 +119,9 @@ const Servicios = () => {
             <span className="span1">{servicio.id}</span>
             <span className="span2">{servicio.nombre}</span>
 
-            <Link to={`/agregarservicio/${servicio.id}`}>Ver detalles</Link>
+            <Link to={`/agregarservicio/${servicio.id}/null`}>
+              Ver detalles
+            </Link>
           </div>
         ))}
         <div className="botones">
@@ -125,14 +132,16 @@ const Servicios = () => {
             Eliminar{" "}
           </Button>
           <Button
-            handleClick={() => navigate(`/agregarservicio/${itemSelected}`)}
+            handleClick={() =>
+              navigate(`/agregarservicio/${itemSelected}/${departamento}`)
+            }
             disabled={itemSelected === null ? true : false}
           >
             Modificar{" "}
           </Button>
           <Button
             handleClick={() =>
-              navigate(`/agregarservicio/${itemSelected}/${id}`)
+              navigate(`/agregarservicio/${itemSelected}/${departamento}`)
             }
           >
             Agregarr +{" "}

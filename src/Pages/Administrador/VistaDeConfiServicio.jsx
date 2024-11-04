@@ -32,14 +32,14 @@ function VistaDeConfiServicio() {
       terminosCondiciones: terminos_condiciones,
       textoTerminosCondiciones: textoTerminosCondiciones,
     };
-    if (id || id !== null) {
+    if (id !== "null") {
       console.log(id);
       console.log("se edita");
       axios
         .put(`http://localhost:8080/api/servicios/editar/${id}`, body)
         .then((res) => {
           if (res.data) {
-            navigate("/servicios");
+            navigate(`/servicios/${departamento}`);
           }
         })
         .catch((error) => {
@@ -51,7 +51,7 @@ function VistaDeConfiServicio() {
         .post(`http://localhost:8080/api/servicios/${departamento}/crear`, body)
         .then((res) => {
           if (res.data) {
-            navigate("/servicios");
+            navigate(`/servicios/${departamento}`);
           }
         })
         .catch((error) => {
@@ -60,7 +60,7 @@ function VistaDeConfiServicio() {
     }
   };
   useEffect(() => {
-    if (id) {
+    if (id !== "null") {
       axios
         .get(`http://localhost:8080/api/servicios/${id}`)
         .then((resp) => {
@@ -78,6 +78,8 @@ function VistaDeConfiServicio() {
         });
     }
   }, []);
+  console.log("id", id);
+  console.log("departamento", departamento);
   return (
     <div className="container_lista">
       <div className="configurar_vista_servicio_container">
