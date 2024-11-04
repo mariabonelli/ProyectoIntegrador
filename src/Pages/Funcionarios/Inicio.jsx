@@ -10,6 +10,13 @@ import { useNavigate } from "react-router-dom";
 function Inicio() {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    setInfoPage({
+      title: "Inicio Funcionarios",
+      subtitle: "Bienvenido funcionario",
+    });
+  }, []);
+
   return (
     <div className="container_inicio_funcionario">
       <List>

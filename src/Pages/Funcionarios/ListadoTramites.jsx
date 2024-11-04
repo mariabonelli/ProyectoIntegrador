@@ -28,6 +28,15 @@ function ListadoTramites() {
         }
       });
   }, []);
+
+  useEffect(() => {
+    setInfoPage({
+      title: "Listado de Tramites",
+      subtitle:
+        "Estas en el apartado para revisar la lista de plantillas de tramites",
+    });
+  }, []);
+
   console.log(token);
   return (
     <div className="listado_tramites_container">

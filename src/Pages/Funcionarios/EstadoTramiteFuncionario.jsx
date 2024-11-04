@@ -25,6 +25,14 @@ function EstadoTramiteFuncionario() {
       }
     });
   }, [route]);
+
+  useEffect(() => {
+    setInfoPage({
+      title: "Estado de Tramites",
+      subtitle: "Estas en el apartado de asignacion del estado de los tramites",
+    });
+  }, []);
+
   return (
     <div style={{ margin: "20px auto", maxWidth: "100%" }}>
       <div

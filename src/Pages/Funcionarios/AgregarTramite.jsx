@@ -35,8 +35,15 @@ function AgregarTramite() {
           console.log(error);
         });
     }
-    console.log(id);
   };
+
+  useEffect(() => {
+    setInfoPage({
+      title: "Agregado de Tramites",
+      subtitle:
+        "Estas en el apartado para agregar y/o modificar una plantilla de tramite",
+    });
+  }, []);
 
   const handleSubmit = () => {
     const body = {

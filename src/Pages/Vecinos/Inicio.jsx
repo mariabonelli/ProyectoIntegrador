@@ -8,6 +8,13 @@ import { useNavigate } from "react-router-dom";
 function Inicio() {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    setInfoPage({
+      title: "Inicio",
+      subtitle: "Bienvenido a inicio",
+    });
+  }, []);
+
   return (
     <div className="container_inicio_vecino">
       <List>

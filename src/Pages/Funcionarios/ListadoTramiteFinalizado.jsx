@@ -24,6 +24,14 @@ function ListadoTramitesFinalizados() {
       }
     });
   }, [route]);
+
+  useEffect(() => {
+    setInfoPage({
+      title: "Listado Tramites",
+      subtitle: "estas en el listado de trámites finalizados",
+    });
+  }, []);
+
   return (
     <div style={{ margin: "20px auto", maxWidth: "100%" }}>
       {filtroPorFinalizado.map((item) => (

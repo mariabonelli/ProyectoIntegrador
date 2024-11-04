@@ -72,7 +72,7 @@ const Rutas = ({ logOut }) => {
   );
 };
 
-function Drawer({ children, logOut }) {
+function Drawer({ children, logOut, infoPage }) {
   return (
     <>
       <header>
@@ -98,7 +98,7 @@ function Drawer({ children, logOut }) {
             {" "}
           </label>
         </nav>
-        <span className="drawer_title">Título de página</span>
+        <span className="drawer_title">{infoPage.title}</span>
       </header>
       <aside id="sidebar">
         <Rutas logOut={logOut} />
@@ -106,7 +106,7 @@ function Drawer({ children, logOut }) {
 
       <main>
         <div className="container_app">
-          <Banner />
+          <Banner infoPage={infoPage} />
           {children}
         </div>
       </main>

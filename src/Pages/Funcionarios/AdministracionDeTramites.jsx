@@ -15,6 +15,13 @@ function AdministracionDeTramites() {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    setInfoPage({
+      title: "Administracion de tramites",
+      subtitle: "Estas en el apartado para agregar tramites",
+    });
+  }, []);
+
   return (
     <div className="tramite_por_servicio_container">
       <div className="content_item">

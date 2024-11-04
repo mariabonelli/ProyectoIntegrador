@@ -6,7 +6,7 @@ import List from "../../Components/List/List";
 import ListItemTitle from "../../Components/List/ListItemTitle";
 import { useParams } from "react-router-dom";
 
-function HistorialTramiteFinalizados() {
+function HistorialTramiteFinalizados({ setInfoPage }) {
   const [data, setData] = useState([]);
 
   const { id } = useParams();
@@ -30,6 +30,13 @@ function HistorialTramiteFinalizados() {
       }
     });
   }, [route]);
+
+  useEffect(() => {
+    setInfoPage({
+      title: "Historial de Trámites finalizados",
+      subtitle: "estas en el listado de trámites finalizados",
+    });
+  }, []);
 
   return (
     <div style={{ margin: "20px auto", maxWidth: "100%" }}>

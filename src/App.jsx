@@ -31,6 +31,10 @@ import AdministracionDeTramites from "./Pages/Funcionarios/AdministracionDeTrami
 
 function App() {
   const [user, setUser] = useState(null);
+  const [infoPage, setInfoPage] = useState({
+    title: "Título página",
+    subtitle: "detalle de página",
+  });
 
   const logOut = () => {
     localStorage.removeItem("user");
@@ -47,11 +51,11 @@ function App() {
 
   return (
     <>
-      <Drawer logOut={logOut}>
+      <Drawer logOut={logOut} infoPage={infoPage}>
         <Routes>
           <Route
             path="/historialtramitesfinalizados"
-            element={<HistorialTramiteFinalizados />}
+            element={<HistorialTramiteFinalizados setInfoPage={setInfoPage} />}
           ></Route>
           <Route
             path="/historialtramitesfinalizados/:id"
@@ -60,7 +64,7 @@ function App() {
           <Route path="/departamentos" element={<Departamentos />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/solicitudes" element={<Solicitudes />} />
-          <Route path="/" element={<InicioFuncionario />} />
+          <Route path="/" element={<InicioVecino />} />
           <Route path="/funcionario" element={<InicioFuncionario />} />
           <Route path="/listadotramites" element={<ListadoTramites />} />
           <Route

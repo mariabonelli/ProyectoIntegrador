@@ -33,6 +33,14 @@ function EstadoTramite() {
       }
     });
   }, [route]);
+
+  useEffect(() => {
+    setInfoPage({
+      title: "Estado de Tramites",
+      subtitle: "Estas en el listado de tus tramites en revision",
+    });
+  }, []);
+
   return (
     <div style={{ margin: "20px auto", maxWidth: "100%" }}>
       <div

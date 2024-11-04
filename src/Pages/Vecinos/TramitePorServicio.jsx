@@ -12,6 +12,13 @@ function TramitePorServicio() {
     console.log("use effect");
   }, []);
 
+  useEffect(() => {
+    setInfoPage({
+      title: "Tramites",
+      subtitle: "Estas en el listado de tramites disponible",
+    });
+  }, []);
+
   return (
     <div className="tramite_por_servicio_container">
       <div className="content_item">

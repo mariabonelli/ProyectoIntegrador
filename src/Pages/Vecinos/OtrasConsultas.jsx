@@ -5,6 +5,13 @@ import "./OtrasConsultasStyle.css";
 import ListadoDeServicios from "../ListadoDeServicios";
 
 function OtrasConsultas() {
+  useEffect(() => {
+    setInfoPage({
+      title: "Contactanos",
+      subtitle: "Estas en el apartado de otras consultas",
+    });
+  }, []);
+
   return (
     <div className="container_otras_consultas">
       <List>
