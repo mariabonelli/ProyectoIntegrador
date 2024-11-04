@@ -1,0 +1,77 @@
+.container {
+  width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ccc;
+  flex-direction: column;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.container h2 {
+  margin-bottom: 20px;
+  color: black;
+}
+
+.container h3 {
+  margin-bottom: 15px;
+}
+
+.boton-volver {
+  border: none;
+  background-color: white;
+  color: #05a6dd;
+  padding: 25px 20px;
+  cursor: pointer;
+  font-size: 45px;
+  outline: none;
+  box-shadow: 0 2px white;
+  text-align: right;
+}
+
+.content {
+  width: 90%;
+}
+
+.content .editable {
+  background-color: #fff;
+  padding: 20px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  resize: vertical;
+  width: 100%;
+  height: 250px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.plantilla-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.footer {
+  margin-top: 20px;
+  text-align: right;
+  font-size: 14px;
+}
+
+.footer-logo {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.boton:active {
+  background-color: tomato;
+  box-shadow: 0 5px transparent;
+  transform: translateY(4px);
+}
+
+.footer img {
+  width: 200px;
+}
