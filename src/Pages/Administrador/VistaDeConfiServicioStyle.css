@@ -1,0 +1,22 @@
+.configurar_vista_servicio_container {
+  width: 600px;
+  max-width: 100%;
+  margin: auto;
+}
+
+.configurar_vista_servicio_container_form {
+  max-width: 100%;
+}
+
+.configurar_vista_servicio_container_form button {
+  width: 100%;
+}
+
+.container_lista {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+}

@@ -80,6 +80,18 @@
   color: var(--primary-color);
   box-shadow: none;
 }
+.btn_outlined_secondary {
+  background-color: transparent;
+  border: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+  box-shadow: none;
+}
+.btn_outlined_white {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  box-shadow: none;
+}
 .btn_text_primary {
   border-color: var(--primary-color);
   color: var(--primary-color);
@@ -126,4 +138,13 @@
 }
 .btn_small > span {
   padding: 10px 16px;
+}
+.btn_disabled {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.2);
+  box-shadow: none;
+  cursor: no-drop;
+}
+.btn_disabled:hover > span {
+  background-color: rgba(0, 0, 0, 0.1) !important;
 }

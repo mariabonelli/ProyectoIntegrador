@@ -1,0 +1,21 @@
+.listado_tramites_container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  width: 100%;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  height: calc(100% - 100px);
+}
+.Listado_Tramites_body {
+  display: flex;
+}
+.Listado_Tramites_body .ui_list {
+  margin: auto !important;
+}
+.listado_tramites_action {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+}

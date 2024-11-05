@@ -1,0 +1,14 @@
+.agregar_departamento_container {
+  margin-top: 160px;
+  width: 600px;
+  max-width: 100%;
+  margin: 30px auto;
+}
+
+.agregar_departamento_container_form {
+  max-width: 100%;
+}
+
+.agregar_departamento_container_form button {
+  width: 100%;
+}

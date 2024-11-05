@@ -1,14 +1,16 @@
+import { useId } from "react";
 import "./FormStyle.css";
 
 function TextArea({
   outlined,
   handleChange,
   name,
-  id,
   rows,
   placeholder,
   required,
+  value,
 }) {
+  const id = useId();
   return (
     <>
       {/* evaluacion ejemplo 1!=1 ?evualiacion verdadera:evaluacion falsa */}
@@ -17,6 +19,7 @@ function TextArea({
           onChange={(e) => {
             handleChange(e.target.value);
           }}
+          value={value}
           name={name}
           id={id}
           rows={rows}

@@ -1,0 +1,112 @@
+/* Servicios.css */
+.contenedor {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+}
+
+.barra-de-busqueda {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.barra-de-busqueda input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.barra-de-busqueda button {
+  padding: 10px 20px;
+  background-color: #0bb79e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.barra-de-busqueda button:hover {
+  background-color: #a3d339;
+}
+
+.servicio {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.servicio:hover {
+  background-color: #f1f1f1;
+}
+
+.servicio input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.servicio a {
+  color: #0bb79e;
+  text-decoration: none;
+}
+
+.servicio a:hover {
+  text-decoration: underline;
+}
+
+.botones {
+  display: flex;
+  justify-content: space-between;
+}
+
+.boton_eliminar {
+  flex-grow: 1;
+  margin: 0 5px;
+  padding: 10px 20px;
+  background-color: #ff6427;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.boton_modificar {
+  flex-grow: 1;
+  margin: 0 5px;
+  padding: 10px 20px;
+  background-color: #a3d339;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.boton_agregar {
+  flex-grow: 1;
+  margin: 0 5px;
+  padding: 10px 20px;
+  background-color: #05a6dd;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.encabezados {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 2px solid #5fd6f2;
+  background-color: white;
+  font-weight: bold;
+  color: #5fd6f2;
+}
