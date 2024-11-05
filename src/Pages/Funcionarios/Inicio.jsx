@@ -2,12 +2,13 @@
  */
 
 import Button from "../../Components/Button/Button";
+import { useEffect } from "react";
 import List from "../../Components/List/List";
 import ListItemTitle from "../../Components/List/ListItemTitle";
 import "./InicioStyle.css";
 import { useNavigate } from "react-router-dom";
 
-function Inicio() {
+function Inicio({ setInfoPage }) {
   const navigate = useNavigate();
 
   useEffect(() => {

@@ -59,39 +59,57 @@ function App() {
           ></Route>
           <Route
             path="/historialtramitesfinalizados/:id"
-            element={<HistorialTramiteFinalizados />}
+            element={<HistorialTramiteFinalizados setInfoPage={setInfoPage} />}
           ></Route>
           <Route path="/departamentos" element={<Departamentos />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/solicitudes" element={<Solicitudes />} />
-          <Route path="/" element={<InicioVecino />} />
-          <Route path="/funcionario" element={<InicioFuncionario />} />
-          <Route path="/listadotramites" element={<ListadoTramites />} />
+          <Route
+            path="/"
+            element={<InicioVecino setInfoPage={setInfoPage} />}
+          />
+          <Route
+            path="/funcionario"
+            element={<InicioFuncionario setInfoPage={setInfoPage} />}
+          />
+          <Route
+            path="/listadotramites"
+            element={<ListadoTramites setInfoPage={setInfoPage} />}
+          />
           <Route
             path="/listadotramitesfinalizados"
-            element={<ListadoTramitesFinalizados />}
+            element={<ListadoTramitesFinalizados setInfoPage={setInfoPage} />}
           />
-          <Route path="/otrasconsultas" element={<OtrasConsultas />}></Route>
+          <Route
+            path="/otrasconsultas"
+            element={<OtrasConsultas setInfoPage={setInfoPage} />}
+          ></Route>
           <Route
             path="/tramiteporservicio"
-            element={<TramitePorServicio />}
+            element={<TramitePorServicio setInfoPage={setInfoPage} />}
           ></Route>
-          <Route path="/estadotramites" element={<EstadoTramite />}></Route>
-          <Route path="/agregartramites" element={<AgregarTramite />}></Route>
+          <Route
+            path="/estadotramites"
+            element={<EstadoTramite setInfoPage={setInfoPage} />}
+          ></Route>
+          <Route
+            path="/agregartramites"
+            element={<AgregarTramite setInfoPage={setInfoPage} />}
+          ></Route>
           <Route
             path="/agregartramites/item/:id"
-            element={<AgregarTramite />}
+            element={<AgregarTramite setInfoPage={setInfoPage} />}
           ></Route>
           <Route path="/departamentos" element={<Departamentos />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/solicitudes" element={<Solicitudes />} />
           <Route
             path="/historialtramitesfinalizados/:id"
-            element={<HistorialTramiteFinalizados />}
+            element={<HistorialTramiteFinalizados setInfoPage={setInfoPage} />}
           ></Route>
           <Route
             path="/administraciondetramites"
-            element={<AdministracionDeTramites />}
+            element={<AdministracionDeTramites setInfoPage={setInfoPage} />}
           ></Route>
         </Routes>
       </Drawer>

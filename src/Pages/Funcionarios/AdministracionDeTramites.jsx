@@ -5,7 +5,7 @@ import Button from "../../Components/Button/Button";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function AdministracionDeTramites() {
+function AdministracionDeTramites({ setInfoPage }) {
   const [pagado, setPagado] = useState(false);
   const [dependencia, setDependencia] = useState("");
 
@@ -17,8 +17,8 @@ function AdministracionDeTramites() {
 
   useEffect(() => {
     setInfoPage({
-      title: "Administracion de tramites",
-      subtitle: "Estas en el apartado para agregar tramites",
+      title: "Administracion de trámites",
+      subtitle: "Estas en el apartado para agregar trámites",
     });
   }, []);
 

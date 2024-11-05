@@ -9,7 +9,7 @@ import Button from "../../Components/Button/Button";
 const user_id = 1;
 const user_tipo = "VECINO";
 
-function EstadoTramite() {
+function EstadoTramite({ setInfoPage }) {
   const [data, setData] = useState([]);
   const [route, setRoute] = useState(
     `http://localhost:8080/api/solicitudes/lista`
@@ -36,8 +36,8 @@ function EstadoTramite() {
 
   useEffect(() => {
     setInfoPage({
-      title: "Estado de Tramites",
-      subtitle: "Estas en el listado de tus tramites en revision",
+      title: "Estado de Trámites",
+      subtitle: "Estas en el listado de tus trámites en revisión",
     });
   }, []);
 

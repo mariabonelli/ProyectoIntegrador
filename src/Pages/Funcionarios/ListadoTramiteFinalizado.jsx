@@ -7,7 +7,7 @@ import ListItemTitle from "../../Components/List/ListItemTitle";
 const user_id = 0;
 const user_tipo = "FUNCIONARIO";
 
-function ListadoTramitesFinalizados() {
+function ListadoTramitesFinalizados({ setInfoPage }) {
   const [data, setData] = useState([]);
   const [route, setRoute] = useState(
     `http://localhost:8080/api/solicitudes/lista`
@@ -27,7 +27,7 @@ function ListadoTramitesFinalizados() {
 
   useEffect(() => {
     setInfoPage({
-      title: "Listado Tramites",
+      title: "Listado Trámites",
       subtitle: "estas en el listado de trámites finalizados",
     });
   }, []);

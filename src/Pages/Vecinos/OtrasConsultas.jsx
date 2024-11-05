@@ -2,9 +2,10 @@
 import List from "../../Components/List/List";
 import ListItemTitle from "../../Components/List/ListItemTitle";
 import "./OtrasConsultasStyle.css";
+import { useEffect } from "react";
 import ListadoDeServicios from "../ListadoDeServicios";
 
-function OtrasConsultas() {
+function OtrasConsultas({ setInfoPage }) {
   useEffect(() => {
     setInfoPage({
       title: "Contactanos",

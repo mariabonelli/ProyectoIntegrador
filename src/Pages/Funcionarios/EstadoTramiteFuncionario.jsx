@@ -9,7 +9,7 @@ import Button from "../../Components/Button/Button";
 const user_id = 0;
 const user_tipo = "FUNCIONARIO";
 
-function EstadoTramiteFuncionario() {
+function EstadoTramiteFuncionario({ setInfoPage }) {
   const [data, setData] = useState([]);
   const [route, setRoute] = useState(
     `http://localhost:8080/api/solicitudes/lista`
@@ -28,8 +28,8 @@ function EstadoTramiteFuncionario() {
 
   useEffect(() => {
     setInfoPage({
-      title: "Estado de Tramites",
-      subtitle: "Estas en el apartado de asignacion del estado de los tramites",
+      title: "Estado de Trámites",
+      subtitle: "Estas en el apartado de asignación del estado de los trámites",
     });
   }, []);
 

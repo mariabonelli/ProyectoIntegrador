@@ -10,7 +10,7 @@ import ListItemTitle from "../../Components/List/ListItemTitle";
 import "./ListadoTramitesStyle.css";
 import Button from "../../Components/Button/Button";
 
-function AgregarTramite() {
+function AgregarTramite({ setInfoPage }) {
   const [nombre, setNombre] = useState("");
   const [descripcion, setDescripcion] = useState("");
   const [cargaDeArchivo, setCargaDeArchivo] = useState("");
@@ -39,9 +39,9 @@ function AgregarTramite() {
 
   useEffect(() => {
     setInfoPage({
-      title: "Agregado de Tramites",
+      title: "Agregado de trámites",
       subtitle:
-        "Estas en el apartado para agregar y/o modificar una plantilla de tramite",
+        "Estas en el apartado para agregar y/o modificar una plantilla de trámite",
     });
   }, []);
 

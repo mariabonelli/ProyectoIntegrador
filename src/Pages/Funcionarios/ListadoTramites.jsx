@@ -7,7 +7,7 @@ import ListItemTitle from "../../Components/List/ListItemTitle";
 import "./ListadoTramitesStyle.css";
 import Button from "../../Components/Button/Button";
 
-function ListadoTramites() {
+function ListadoTramites({ setInfoPage }) {
   const [selecteditems, SetSelecteditem] = useState(null);
   const [data, setData] = useState([]);
 
@@ -31,9 +31,9 @@ function ListadoTramites() {
 
   useEffect(() => {
     setInfoPage({
-      title: "Listado de Tramites",
+      title: "Listado de trámites",
       subtitle:
-        "Estas en el apartado para revisar la lista de plantillas de tramites",
+        "Estas en el apartado para revisar la lista de plantillas de trámites",
     });
   }, []);
 
