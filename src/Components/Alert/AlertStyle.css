@@ -8,6 +8,7 @@
   height: 100%;
   animation-name: showbottom;
   animation-duration: 0.8s;
+  z-index: 4;
 }
 
 @keyframes showbottom {

@@ -1,6 +1,6 @@
-/* AmongBugs */
-function ListadoDeServicios() {
-  return <div>ListadoDeServicios</div>;
-}
 
+
+function ListadoDeServicios() { 
+  return "ListadoDeServicios"
+}
 export default ListadoDeServicios;

@@ -5,6 +5,7 @@ import Button from "../Button/Button";
 import List from "../List/List";
 import ListItemTitle from "../List/ListItemTitle";
 import rencalogo from "../../assets/Renca.png";
+import AlertaDeNotificaciones from "../AlertaDeNotificacion";
 
 const Rutas = ({ logOut }) => {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -105,6 +106,7 @@ function Drawer({ children, logOut, infoPage }) {
           </label>
         </nav>
         <span className="drawer_title">{infoPage.title}</span>
+        <AlertaDeNotificaciones />
       </header>
       <aside id="sidebar">
         <Rutas logOut={logOut} />
