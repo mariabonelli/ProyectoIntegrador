@@ -4,6 +4,8 @@ import Departamentos from "./Pages/Administrador/Departamentos";
 import Servicios from "./Pages/Administrador/Servicios";
 import Solicitudes from "./Pages/Administrador/Solicitudes";
 import ListadoDeServicios from "./Pages/ListadoDeServicios";
+import Upload from "./Components/Upload/Upload";
+import ListadoDeDepartamentos from "./Pages/ListadoDeDepartamentos";
 
 function App() {
   return (
@@ -13,7 +15,7 @@ function App() {
           <Route path="/departamentos" element={<Departamentos />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/solicitudes" element={<Solicitudes />} />
-          <Route path="/" element={<ListadoDeServicios />} />
+          <Route path="/" element={<ListadoDeDepartamentos />} />
         </Routes>
       </Drawer>
     </>
