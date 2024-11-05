@@ -34,7 +34,7 @@ function AdministracionDeTramites({ setInfoPage }) {
       <div className="content_item">
         {console.log("return/render")}
         {data.map((item) => (
-          <div key={item.id}>
+          <div key={item._id}>
             <Button variant={"btn_outlined"}>{item.nombre}</Button>
           </div>
         ))}

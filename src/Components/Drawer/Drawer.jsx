@@ -37,6 +37,12 @@ const Rutas = ({ logOut }) => {
 
       <ul className="vertical_list">
         <li>
+          <Link to="/departamentos">Lista de departamentos</Link>
+        </li>
+        <li>
+          <Link to="/departamentos">Departamentos</Link>
+        </li>
+        <li>
           <Link to="/">Inicio</Link>
         </li>
         <li>

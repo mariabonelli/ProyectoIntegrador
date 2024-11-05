@@ -1,10 +1,15 @@
-import { Children, useState } from "react";
+import { Children, useState, useEffect } from "react";
 import "./AlertStyle.css";
 import Button from "../Button/Button";
 
-function Alert({ children, selfclosing, opensection }) {
-  const [abierto, setAbierto] = useState(true);
-  console.log(abierto);
+function Alert({ children, selfclosing, opensection, autoopen }) {
+  const [abierto, setAbierto] = useState(false);
+
+  useEffect(() => {
+    if (autoopen === undefined) return;
+    if (autoopen === true) setAbierto(true);
+  }, [autoopen]);
+
   return (
     <>
       <div onClick={() => setAbierto(true)} role="button">

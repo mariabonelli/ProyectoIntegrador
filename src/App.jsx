@@ -28,6 +28,10 @@ import ListadoTramitesFinalizados from "./Pages/Funcionarios/ListadoTramiteFinal
 import EstadoTramite from "./Pages/Vecinos/EstadoTramite";
 
 import AdministracionDeTramites from "./Pages/Funcionarios/AdministracionDeTramites";
+import AgregarDepartamento from "./Pages/Administrador/AgregarDepartamento";
+import AgregarServicio from "./Pages/Administrador/AgregarServicio";
+import VistaDeConfiServicio from "./Pages/Administrador/VistaDeConfiServicio";
+import VerDetalles from "./Pages/Administrador/VerDetalles";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -104,13 +108,28 @@ function App() {
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/solicitudes" element={<Solicitudes />} />
           <Route
-            path="/historialtramitesfinalizados/:id"
-            element={<HistorialTramiteFinalizados setInfoPage={setInfoPage} />}
-          ></Route>
-          <Route
             path="/administraciondetramites"
             element={<AdministracionDeTramites setInfoPage={setInfoPage} />}
           ></Route>
+          <Route path="/servicios/:departamento" element={<Servicios />} />
+          <Route
+            path="/agregardepartamento"
+            element={<AgregarDepartamento />}
+          />
+          {/* <Route
+            path="/agregarservicio/:id"
+            element={<VistaDeConfiServicio />}
+          /> */}
+          <Route
+            path="/agregarservicio/:id/:departamento"
+            element={<VistaDeConfiServicio />}
+          />
+
+          <Route
+            path="/vistadeconfiservicio"
+            element={<VistaDeConfiServicio />}
+          />
+          <Route path="/verdetalles" element={<VerDetalles />} />
         </Routes>
       </Drawer>
       {!user && <Login loginIsSuccess={setUser} />}

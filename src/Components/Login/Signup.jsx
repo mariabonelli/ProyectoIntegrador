@@ -28,7 +28,6 @@ function Signup({ signupIsSuccess }) {
       email: email,
       password: password,
     };
-    console.log(body);
     axios
       .post("http://localhost:8080/api/auth/registro", body)
       .then((resp) => {

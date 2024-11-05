@@ -1,11 +1,6 @@
 import "../Button/ButtonStyle.css";
 
-export default function FormControl({
-  children,
-  handleFormSubmit,
-  disablebutton,
-  sinboton,
-}) {
+export default function FormControl({ children, handleFormSubmit, sinboton }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     handleFormSubmit(event);
@@ -14,7 +9,7 @@ export default function FormControl({
     <div className="form_control">
       <form onSubmit={handleSubmit}>
         {children}
-        {!disablebutton && (
+        {!sinboton && (
           <button className="btn" type="submit">
             <span>enviar</span>
           </button>
