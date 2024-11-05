@@ -32,6 +32,7 @@ import AgregarDepartamento from "./Pages/Administrador/AgregarDepartamento";
 import AgregarServicio from "./Pages/Administrador/AgregarServicio";
 import VistaDeConfiServicio from "./Pages/Administrador/VistaDeConfiServicio";
 import VerDetalles from "./Pages/Administrador/VerDetalles";
+import PruebaUpload from "./Pages/PruebaUpload";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -131,6 +132,7 @@ function App() {
           />
           <Route path="/verdetalles" element={<VerDetalles />} />
         </Routes>
+        <PruebaUpload />
       </Drawer>
       {!user && <Login loginIsSuccess={setUser} />}
     </>

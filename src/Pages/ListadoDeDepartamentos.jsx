@@ -3,7 +3,7 @@ import Upload from "../Components/Upload/Upload";
 function ListadoDeDepartamentos() {
   return (
     <div>
-      <Upload />
+      <Upload userid={"1"} />
     </div>
   );
 }

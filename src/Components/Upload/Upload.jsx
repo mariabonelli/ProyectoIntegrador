@@ -4,10 +4,12 @@ import { useState } from "react";
 import UploadIcon from "./UploadIcon";
 import axios from "axios";
 
-function Upload({ userid }) {
+function Upload() {
   const [selectedFile, setSelectedFile] = useState(null);
   const [filePreview, setFilePreview] = useState(null);
   const [error, setError] = useState("");
+
+  const userid = JSON.parse(localStorage.getItem("user"));
 
   /*Gestionador de selección de archivos*/
   const handleFileChange = (event) => {
@@ -59,7 +61,7 @@ function Upload({ userid }) {
     formData.append("file", selectedFile);
     try {
       const response = await axios.post(
-        `http://localhost:8080/api/files/upload/paciente/${userid}`,
+        `http://localhost:8080/api/files/upload/usuario/${userid.id}`,
         formData,
         {
           header: {
