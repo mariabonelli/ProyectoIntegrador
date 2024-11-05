@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./DrawerStyle.css";
 import Banner from "../Banner/Banner";
+import AlertaDeNotificacion from "../AlertaDeNotificacion";
 
 const Rutas = () => {
   return (
@@ -9,7 +10,7 @@ const Rutas = () => {
         <Link to="/">Inicio</Link>
       </li>
       <li>
-        <Link to="/servicios">Servicios</Link>
+        <Link to="/">Historial de notificaciones</Link>
       </li>
       <li>
         <a>Trámites veterinarios</a>
@@ -60,6 +61,8 @@ function Drawer({ children }) {
           </label>
         </nav>
         <span className="drawer_title">Título de página</span>
+
+        <AlertaDeNotificacion />
       </header>
       <aside id="sidebar">
         <Rutas />
