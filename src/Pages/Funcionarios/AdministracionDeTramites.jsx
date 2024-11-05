@@ -1,16 +1,23 @@
 /* PatiDevs */
 import { useEffect, useState } from "react";
-import data from "../../assets/PruebasPatiDevs/TramitesLista";
 import Button from "../../Components/Button/Button";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 function AdministracionDeTramites({ setInfoPage }) {
-  const [pagado, setPagado] = useState(false);
-  const [dependencia, setDependencia] = useState("");
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    console.log("use effect");
+    axios
+      .get(`http://localhost:8080/api/tramites/lista`)
+      .then((response) => {
+        if (response) {
+          setData(response.data);
+        }
+      })
+      .catch((error) => {
+        console.log("error", error);
+      });
   }, []);
 
   const navigate = useNavigate();

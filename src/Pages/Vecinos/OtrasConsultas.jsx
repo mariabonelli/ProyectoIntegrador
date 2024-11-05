@@ -8,7 +8,7 @@ import ListadoDeServicios from "../ListadoDeServicios";
 function OtrasConsultas({ setInfoPage }) {
   useEffect(() => {
     setInfoPage({
-      title: "Contactanos",
+      title: "Contáctanos",
       subtitle: "Estas en el apartado de otras consultas",
     });
   }, []);
