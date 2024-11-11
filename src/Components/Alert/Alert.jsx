@@ -6,7 +6,8 @@ function Alert({ children, selfclosing, opensection, autoopen }) {
   const [abierto, setAbierto] = useState(false);
 
   useEffect(() => {
-    if (autoopen === undefined) return;
+    if (autoopen === undefined) setAbierto(false);
+
     if (autoopen === true) setAbierto(true);
   }, [autoopen]);
 

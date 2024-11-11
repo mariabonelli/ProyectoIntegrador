@@ -9,6 +9,9 @@ import AlertaDeNotificaciones from "../AlertaDeNotificacion";
 
 const Rutas = ({ logOut }) => {
   const user = JSON.parse(localStorage.getItem("user"));
+
+  const tipo = user ? user.tipoUser.slice(1, -1) : undefined;
+
   return (
     <>
       <div className="container_user_drawer">
@@ -38,35 +41,28 @@ const Rutas = ({ logOut }) => {
 
       <ul className="vertical_list">
         <li>
-          <Link to="/departamentos">Lista de departamentos</Link>
+          <Link to={"/"}>Inicio</Link>
         </li>
         <li>
-          <Link to="/departamentos">Departamentos</Link>
+          <Link to="/agenda">Agenda</Link>
         </li>
-        <li>
-          <Link to="/">Inicio</Link>
-        </li>
-        <li>
-          <Link to="/servicios">Servicios</Link>
-        </li>
-        <li>
-          <a>Trámites veterinarios</a>
-        </li>
-        <li>
-          <a>Trámites de áreas verdes</a>
-        </li>
-        <li>
-          <a>Estado de trámites</a>
-        </li>
-        <li>
-          <a>Historial de trámites finalizados</a>
-        </li>
-        <li>
-          <a>Otras consultas</a>
-        </li>
-        <li>
-          <a>Perfil</a>
-        </li>
+        {tipo !== "ROLE_VECINO" && (
+          <>
+            <li>
+              <Link to="/departamentos">Lista de departamentos</Link>
+            </li>
+            <li>
+              <Link to="/departamentos">Departamentos</Link>
+            </li>
+            <li>
+              <Link to="/servicios">Servicios</Link>
+            </li>
+            <li>
+              <Link to="/AgendaFuncionario">Agenda Funcionario</Link>
+            </li>
+          </>
+        )}
+
         <li>
           <div style={{ padding: "20px" }}>
             <Button variant="btn_secondary" handleClick={() => logOut()}>

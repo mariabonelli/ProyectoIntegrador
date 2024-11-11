@@ -1,19 +1,29 @@
-/* PatiDevs Lista de Tramites disponibles para creacion de solicitud para el Vecino*/
 import { useEffect, useState } from "react";
 import data from "../../assets/PruebasPatiDevs/TramitesLista";
 import Button from "../../Components/Button/Button";
 import "./TramitePorServicioStyle.css";
 import axios from "axios";
 function TramitePorServicio({ setInfoPage }) {
-  useEffect(() => {
-    console.log("use effect");
-  }, []);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     setInfoPage({
       title: "Trámites",
       subtitle: "Estas en el listado de trámites disponibles",
     });
+  }, []);
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:8080/api/tramites/lista`)
+      .then((response) => {
+        if (response) {
+          setData(response.data);
+        }
+      })
+      .catch((error) => {
+        console.log("error", error);
+      });
   }, []);
 
   return (

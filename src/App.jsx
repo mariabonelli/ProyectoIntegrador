@@ -32,6 +32,9 @@ import AgregarDepartamento from "./Pages/Administrador/AgregarDepartamento";
 import AgregarServicio from "./Pages/Administrador/AgregarServicio";
 import VistaDeConfiServicio from "./Pages/Administrador/VistaDeConfiServicio";
 import VerDetalles from "./Pages/Administrador/VerDetalles";
+import AgendaFuncionario from "./Pages/Funcionarios/AgendaFuncionario";
+import Upload from "./Components/Upload/Upload";
+import Agenda from "./Pages/Agenda";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -47,16 +50,27 @@ function App() {
 
   useEffect(() => {
     const sesion = localStorage.getItem("user");
-    console.log(sesion);
     if (sesion) {
-      setUser(sesion);
+      setUser(JSON.parse(sesion));
     }
   }, []);
+  const tipo = user && user !== null ? user.tipoUser.slice(1, -1) : undefined;
 
   return (
     <>
       <Drawer logOut={logOut} infoPage={infoPage}>
         <Routes>
+          <Route
+            path={"/"}
+            element={
+              tipo !== "ROLE_VECINO" ? (
+                <InicioFuncionario setInfoPage={setInfoPage} />
+              ) : (
+                <InicioVecino setInfoPage={setInfoPage} />
+              )
+            }
+          />
+          <Route path="/agenda" element={<Agenda />} />
           <Route
             path="/historialtramitesfinalizados"
             element={<HistorialTramiteFinalizados setInfoPage={setInfoPage} />}
@@ -68,14 +82,7 @@ function App() {
           <Route path="/departamentos" element={<Departamentos />} />
           <Route path="/servicios" element={<Servicios />} />
           <Route path="/solicitudes" element={<Solicitudes />} />
-          <Route
-            path="/"
-            element={<InicioVecino setInfoPage={setInfoPage} />}
-          />
-          <Route
-            path="/funcionario"
-            element={<InicioFuncionario setInfoPage={setInfoPage} />}
-          />
+
           <Route
             path="/listadotramites"
             element={<ListadoTramites setInfoPage={setInfoPage} />}
@@ -130,6 +137,7 @@ function App() {
             element={<VistaDeConfiServicio />}
           />
           <Route path="/verdetalles" element={<VerDetalles />} />
+          <Route path="/AgendaFuncionario" element={<AgendaFuncionario />} />
         </Routes>
       </Drawer>
       {!user && <Login loginIsSuccess={setUser} />}
